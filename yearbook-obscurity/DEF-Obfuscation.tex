@@ -1,0 +1,128 @@
+% PLEASE USE THIS FILE AS A TEMPLATE FOR THE PUBLICATION 
+% Check file IOS-Book-Article.tex
+%
+
+\documentclass{IOS-Book-Article}     %[seceqn,secfloat,secthm]
+%\usepackage{mathptmx}
+%\usepackage[T1]{fontenc}
+%\usepackage{times}%
+%
+%%%%%%%%%%% Put your definitions here
+
+
+%%%%%%%%%%% End of definitions
+\begin{document}
+\begin{frontmatter}          % The preamble begins here.
+%
+%\pretitle{}
+\title{Social Palimpsests - clouding the lens of the personal panopticon}
+\runningtitle{\ldots or ``Suck my tailpipe'' - how I learned to stop worrying
+and toxify my exhaust data}
+%\subtitle{}
+
+% Two or more authors:
+\author[A]{\fnms{Dave} \snm{Murray-Rust}},
+\author[B]{\fnms{Max} \snm{van Kleek}}
+\author[B]{\fnms{Laura} \snm{Dragan}}
+\runningauthor{Murray-Rust et. al.}
+\address[A]{Centre for Intelligent Systems and Applications,
+Department of Informatics, University of Edinburgh}
+\address[B]{Southampton}
+
+\begin{abstract}
+The use of personal data has incredible potential to benefit both society and
+individuals, through increased understanding of behaviour, communication and
+support for emerging forms of socialisation and connectedness. However, there
+are risks associated with disclosing personal information, and present systems
+show a systematic asymmetry between the subjects of the data and those who
+control and manage the way that data is propagated and used. In this chapter, we
+explore a set of techniques for ameliorating the tension between the desire for
+the benefits of sharing and a distrust of those with whom we share our data.
+\end{abstract}
+
+\begin{keyword}
+
+\end{keyword}
+
+\end{frontmatter}
+
+%%%%%%%%%%% The article body starts:
+
+\section*{Introduction}
+
+\subsection{The rise of personal data and services reliant on it}
+
+\subsection{Data, Capta, Fiat Data, Exhaust Data - and the impossibility
+of limiting data diffusion}
+
+``Refusal is not a practical option, as data collection is an inherent condition
+of many essential societal transactions''
+\cite{brunton2011vernacular}
+
+\subsection{The case for lying and the importance of anonymity}
+
+\subsection{There's lots of great stuff out there!} 
+
+Types of disinformation \cite{alexander2010Disinformation}:
+\begin{description}
+  \item[redaction] is hiding some or all of the information in a message
+  \item[airbrushing] is changing some of the information. \emph{local crowd
+  blending} means change it to a nearby message likely to be plausible.
+  \emph{global crowd blending} means change it to a message in a dense part of
+  the space.
+  \item[curveball] add extra distracting information, push message into low
+  density space
+\end{description}
+
+\subsection{Why doing it socially is difficult}
+
+\subsection{Scenario}
+
+Lets take the scenario of modifying location data; might want to:
+\begin{itemize}
+  \item Hide the fact we're away from home so we don't get robbed - create
+  fictitious data that looks like it came from home town. Enlist friends.
+  \item Avoid paparazzi - generate chaff so real location is obscured
+  \item Disguise the fact we're going to ballet lessons - systematically lie,
+  saying we're going to the boxing gym instead
+\end{itemize}
+
+Alexander's taxonomy \cite{alexander2010Disinformation} discusses several types
+of disinformation which relate to modifying single messages. In contrast, due to
+the pervasiveness of modern communications, we are concerned with modifying
+message \emph{streams}, where a trace of multiple values must be considered.
+Additionally, there is the possibility of interaction with others, whether it is
+collusion to strengthen obfuscatory practices, or the addition---purposeful or
+otherwise---of information which exposes the obfuscation.
+
+It is problematic to consider the obfuscatory tactics here without a sense of
+the scenario in which they are to be deployed. Our scenario in this paper is:
+\begin{quote}
+The user wishes to make use of services which expect location information; 
+the location information provided is shared publicly and is almost
+certainly stored indefinitely. At times, the user may want to draw on location
+based information---such as restaurant recommendations or directions---and there
+may be times when they with to verify that they were at a particular location.
+\end{quote}
+
+In order to illustrate the effects of these different strategies, we plot a one
+dimensional representation of ``location'' against time.
+\section{Tools}
+
+\subsection{Personal Data Stores - allies on the intimacy battleground}
+
+\subsection{Verification and provenance}
+
+
+
+
+%%%%%%%%%%% The bibliography starts:
+%\begin{thebibliography}{99}
+%\bibitem{r1}
+%\end{thebibliography}
+
+\bibliographystyle{abbrv}
+\bibliography{palimpsests}
+
+
+\end{document}
