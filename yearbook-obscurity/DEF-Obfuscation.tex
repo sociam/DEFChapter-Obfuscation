@@ -8,7 +8,32 @@
 %\usepackage{times}%
 %
 %%%%%%%%%%% Put your definitions here
+\usepackage{paralist}
+\usepackage{graphicx}
+\usepackage{color}
 
+
+%Make figures easier
+\newcommand{\fig}[3][0.9]{
+\begin{figure}[tp]
+\begin{center}
+\includegraphics[width=#1\textwidth]{figures/#2}
+\caption{#3}
+\label{fig:#2}
+\end{center}
+\end{figure}
+}
+
+\newcommand{\tbox}[3][red]{{
+\color{#1}\noindent{
+   \fbox{\scriptsize{ {\bf #2} \textsl{#3}}}
+   \vspace{2pt}
+}
+}}
+
+
+\definecolor{darkgreen}{rgb}{0,0.4,0}
+\newcommand{\todo}[1]{\tbox{TODO:}{#1}}
 
 %%%%%%%%%%% End of definitions
 \begin{document}
@@ -41,7 +66,7 @@ the benefits of sharing and a distrust of those with whom we share our data.
 \end{abstract}
 
 \begin{keyword}
-
+Obfuscation; Data politics; Personal Data Stores; Social Machines; Pants-on-fire;
 \end{keyword}
 
 \end{frontmatter}
@@ -52,16 +77,92 @@ the benefits of sharing and a distrust of those with whom we share our data.
 
 \subsection{The rise of personal data and services reliant on it}
 
-\subsection{Data, Capta, Fiat Data, Exhaust Data - and the impossibility
-of limiting data diffusion}
 
 ``Refusal is not a practical option, as data collection is an inherent condition
 of many essential societal transactions''
 \cite{brunton2011vernacular}
 
+\subsection{Data, Capta, Fiat Data, Exhaust Data - and the impossibility
+of limiting data diffusion}
+
+Increasingly, in order to utilise services, we must provide our data to third
+parties. This ranges from mobile phone numbers being required for Yahoo
+accounts, to location data being shared with Foursquare or Grindr, to the NHS
+adding personal health information to centralised databases. We call this fiat
+data - an organisation uses its position to demand (by fiat) the disclosure of
+certain information in return for use of its services. In some cases, this is a
+necessary requirement for the service to be worthwhile, but in many cases it
+represents an attempt by the organisation to create a monetizable product from its users.
+
+Sharing data, by definition, is the entrusting of other parties with
+information; this necessarily involves relinquishing control over how it is
+subsequently handled and disseminated. However, data is persistent, while people
+and contexts change. A government may decide to share previously confidential
+data, as in the case of the recent care.data fiasco in the UK; a company can be
+bought and its assets acquired–the purchase of Moves by Facebook raised issues
+around the terms and conditions of data handling companies; and even without
+malice accidents can expose vast swathes of personal data, or court proceedings
+may force private communications to become public - the Enron emails still
+represent the largest publicly available corpus of private emails.  
+
+\subsection{Multiple Identity}
+
+A natural part of online life is the ability to tailor the persona we present to
+different communities and contexts. An individual may want to disclose certain
+things to their professional colleagues, while presenting differently to friends
+and family or non-mainstream friend groups. Sharing certain personal data is a
+barrier to this, as its basis in physical fact provides multiple opportunities
+for joining up otherwise separate databases. Most, if not all, social
+interactions involve both strategic omissions and various kinds of lies and
+non-truths to manage the myriad conflicting social demands placed upon us. The
+lie maintenance required to avoid discovery may be trivial (``sorry, I’m hungry,
+have to go!'') but may become significantly more complicated as lies extend over
+time, and become woven into the social fabric.
+
+\subsection{Why doing it socially is difficult}
+
 \subsection{The case for lying and the importance of anonymity}
 
-\subsection{There's lots of great stuff out there!} 
+\subsection{Personal Data Stores - allies on the intimacy battleground}
+
+Personal data stores (PDS) represent a partial solution to issue of
+presentation: having trusted, user controlled repositories for data enables a
+more user-centric approach to management of capta---those data which we choose
+to take and preserve. Bridges can then be built between personal data stores and
+the rest of the world in order to support the connected, networked interactions
+which users now expect. If these bridges simply share the data, even in a
+controlled manner, nothing has been gained; hence the bridges become conduits
+for manipulating truth and constructing falsehoods. As personal data stores
+accumulate more real-time contextual data about the individual, as well as about
+the individual’s social connections, PDSes can provide support for the often
+stressful and mentally burdensome task of lie maintenance, for example: i)
+identifying when a person's real activities or whereabouts contradict a lie, and
+might be discovered; ii) identifying indirect social channels that could expose
+a lie (e.g. through friends of friends); iii) suggesting appropriate lies to use
+which are least likely to be detected; iv) suggesting individuals to lie to to
+support lie maintenance (e.g. friends of the person being lied to)
+
+\subsection{Why verification and provenance are better than sharing}
+
+
+Sharing is a crude mechanism. Once data has been shared, the originator can no
+longer exert control over it, and must rely on the behaviour of the recipient,
+which as noted may fail to meet user expectations. Validation, however is a more
+subtle tool: if a user’s personal dataset can be made sufficiently questionable
+as to be useless on its own, then locus of control shifts to the user choosing
+to validate parts of the dataset, which can be performed in a more nuanced,
+contextualised manner. If a user is the final arbiter of trust, they can decide
+to i) sign parts of their record, so that it is verified public fact; ii)
+co-sign it with another entity, so either can verify it but not anyone else;
+iii) verify it through an anonymous channel, so that the entity to whom they
+provide verification cannot propagate the claim further. This verification can
+be carried out entirely separately from the datastore itself, allowing for the
+presentation of different datasets as valid  in different contexts, as well as
+unorthodox methods such as using the Bitcoin blockchain to notarise datasets, so
+that they can be verified in the future without revealing them as true at the
+time.
+
+\section{Review of current approaches and tools} 
 
 Types of disinformation \cite{alexander2010Disinformation}:
 \begin{description}
@@ -74,18 +175,12 @@ Types of disinformation \cite{alexander2010Disinformation}:
   density space
 \end{description}
 
-\subsection{Why doing it socially is difficult}
 
-\subsection{Scenario}
 
-Lets take the scenario of modifying location data; might want to:
-\begin{itemize}
-  \item Hide the fact we're away from home so we don't get robbed - create
-  fictitious data that looks like it came from home town. Enlist friends.
-  \item Avoid paparazzi - generate chaff so real location is obscured
-  \item Disguise the fact we're going to ballet lessons - systematically lie,
-  saying we're going to the boxing gym instead
-\end{itemize}
+
+
+
+\section{A selection of PDS enabled obfuscation strategies}
 
 Alexander's taxonomy \cite{alexander2010Disinformation} discusses several types
 of disinformation which relate to modifying single messages. In contrast, due to
@@ -104,17 +199,167 @@ certainly stored indefinitely. At times, the user may want to draw on location
 based information---such as restaurant recommendations or directions---and there
 may be times when they with to verify that they were at a particular location.
 \end{quote}
+The service is hence \emph{semi-trusted}: there are some benefits which the user
+wishes to accrue, but there are aspects of the service which makes the user
+unwilling to entrust their complete life history to it.
 
-In order to illustrate the effects of these different strategies, we plot a one
-dimensional representation of ``location'' against time.
-\section{Tools}
+\fig{Mediation}{Models of interaction with semitrusted services. a) Direct
+transmission of information; b) computationally mediated transmission, where a
+personal data store is enlisted to aid in obfuscatory processes.}
 
-\subsection{Personal Data Stores - allies on the intimacy battleground}
+The standard model of interaction (Figure \ref{fig:Mediation}a) involves the
+user submitting their data directly to the service; for our obfuscatory
+techniques, we would like to enlist computational support (Figure
+\ref{fig:Mediation}b). This typified, but not limited to mediation from a PDS
+which acts on behalf of the user to modify the data which they provide.
 
-\subsection{Verification and provenance}
+\subsection{Single Player Strategies}
+
+\fig[1.05]{SinglePlayerObfuscation}{Obfuscation strategies for the lone agent}
+Figure \ref{fig:SinglePlayerObfuscation} lists a collection of possible
+obfuscation strategies. In all cases, a fictitious one-dimensional ``location"
+measurement is plotted against time, to give a sense of how an
+individual's position in space changes. Figure \ref{SinglePlayerObfuscation}a is
+the true baseline, with a curve indicating the continuous true position, and the dots
+representing reports of this position to the location-aware service. For each
+strategy we discuss: \begin{inparaenum}[\itshape i\upshape)]
+\item what kind of alteration of baseline data is performed;
+\item what the motivation and possible use cases are;
+\item how some form of computational support aids in the deception;
+\item some of the systems which do this currently.
+\end{inparaenum}
+
+\subsubsection{Noise injection}
+
+The most computationally simple form of obfuscation is the addition of noise to
+the reports which are sent to the semi-trusted party. Here, the points which are
+submitted deviate from the true values in a random manner. This allows the user
+to conceal their exact location, while giving a broad indication of where they
+are.
+
+\todo{Why?} Avoid paparazzi/stalkers; conceal preferences - know you're in the
+high street, but can't tell if you're buying texbooks in Waterstones or beer in
+the White Horse
+
+\subsubsection{Chaff}
+\begin{itemize}
+  \item Add in lots of extra points, with little relation to the real values
+  \item Computationally easy
+  \item Can include the real points
+  \item Disturbs services which expect a single consistent trace
+\end{itemize}
+
+\subsubsection{Systematic Deviation}
+\begin{itemize}
+  \item Modify specific points
+  \item e.g. hid that we're going to ballet lessons, and pretend we're at the
+  boxing gym instead
+  \item Computational support: Can use services to find most useful nearby
+  places to pretend to be at; allows for automatic, thematic deviations
+\end{itemize}
+
+\subsubsection{Pretend to be me}
+\begin{itemize}
+  \item Generate ``user-plausible'' data, while the user deviates from their
+  norm
+  \item For instance, pretend to be at home while actually being on holiday
+  \item CompSupp: have a model of normal behaviour which can be used to generate
+  fake data
+\end{itemize}
+
+\subsubsection{Virtual Holidays}
+\begin{itemize}
+  \item want to pretend that we're deviation from normal when we're not
+  \item i.e. pretend we've gone to a conference when we haven't
+  \item CompSupp: create a theme and help manage the deception
+\end{itemize}
+
+\subsection{Multiplayer Obfuscation}
+\fig{MultiPlayerObfuscation}{Multiplayer obfuscaction strategies: i) artificial
+co-location; ii) supporting information; iii) account sharing}
+
+\subsubsection{Artificial co-location}
+\begin{itemize}
+  \item We can pretend that we're in the same place as our friends
+  \item CompSupp: need to coordinate lies with friends
+\end{itemize}
+
+\subsubsection{Supporting Evidence}
+\begin{itemize}
+  \item We ask our friends for supporting evidence of our lie; could be like
+  co-location, could be broader
+\end{itemize}
+
+\subsubsection{Account Sharing}
+\begin{itemize}
+  \item A group of people share accounts, with some way to decide which is
+  used, e.g. accounts covering geographic areas
+  \item Like swapping supermarket discount cards
+  \item CompSupp: which account, when? discovery and sharing etc.
+\end{itemize}
+
+\subsection{Verification and provenance mechanisms}
+
+\fig{Verification}{Example verification scenario. The user provides a set of
+real data, plus \emph{chaff} to a location aware service. A third party then
+requests verification of some of the points, which the user provides}
+
+Previously, we said verification is better. Why is this?
+
+\begin{itemize}
+  \item Lets assume that we've made our public data completely unreliable so noone can
+use it.
+\item If someone wants to engage with it, they have to talk to us
+\item we can claim a subset of the data - just what they say they need for the
+purpose at hand
+\item We then have a choice of how to respond:
+\item No signing: if we simply send them a message saying ``these
+points belong to me'', then they can use the data, but would not be able to
+convince third parties of its validity.
+\item sign with our private key; now, anyone can check that we have claimed that set of datapoints
+\item sign with our private key and their public key: they can't prove the data
+is ours without revealing their identity.
+\end{itemize}
+
+\subsubsection{Notarization}
+\fig{Notarization}{Notarization of personal data. a) Datapoints and times are
+hashed, and the values sent to a notary service, which provides a URL to verify
+that i) the given data was supplied and ii) when it was supplied. Hashes are
+used so that the data is not publicly shared. b) If the hash of the previous
+submission is included, then sequences of consecutive points can be verified.}
+
+Third party notarization services can be employed. They take
+in some datum, and provide a hash/URL which can be visited to verify that that piece of data was
+provided at a certain time. For example, if someone wants to make a prediction
+for the outcome of a football match, they could notarize that before the match,
+and then subsequently prove that they had made the prediction beforehand. It is
+generall not possible to prove that they only made a single prediction, however,
+so this technique is most suitable when the range of possible things to notarize
+is so large as to make notarizing the entire space infeasible.
+
+With regard to personal data, we can notarize our true data stream as we produce
+it. This means that we can prove that we had considered those points at the
+time, and if we say we were in a particular place, there is a high chance we
+were---however, it does not work in the complementary situtation as producing a
+notarized point does not prove that we were not anywhere else.
 
 
+Notarization does not necessitate revealing the data itself. For instance,
+when submitting a location, a representation of the time and place could be
+hashed, and this hash notarized (Figure \ref{fig:Notarization}a). Additionally,
+points can be notarized in sequence, so that we can demonstrate contiguous sub-sequences of points as having been provided previously; by
+hashing the current location with the previous location, we can link the points
+together, to build up confidence in the notarized results (Figure
+\ref{fig:Notarization}b).
 
+\section{Conclusion}
+
+\begin{itemize}
+  \item Translation to things that aren't location data; generalisability; can't
+  add chaff to our bank accounts (or can we?)
+  \item Viability - how do services react when we fill them full of noise?
+  Plausible versions of these techniques
+\end{itemize}
 
 %%%%%%%%%%% The bibliography starts:
 %\begin{thebibliography}{99}
