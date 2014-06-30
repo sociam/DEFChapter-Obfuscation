@@ -61,8 +61,8 @@ support for emerging forms of socialisation and connectedness. However, there
 are risks associated with disclosing personal information, and present systems
 show a systematic asymmetry between the subjects of the data and those who
 control and manage the way that data is propagated and used. In this chapter, we
-explore a set of techniques for ameliorating the tension between the desire for
-the benefits of sharing and a distrust of those with whom we share our data.
+explore a set of techniques for ameliorating the tension between the 
+the benefits of sharing, and a distrust of those with whom we share our data.
 \end{abstract}
 
 \begin{keyword}
@@ -75,24 +75,29 @@ Obfuscation; Data politics; Personal Data Stores; Social Machines; Pants-on-fire
 
 \section*{Introduction}
 
-\subsection{The rise of personal data and services reliant on it}
+\subsection*{The rise of personal data and services reliant on it}
 
 
-``Refusal is not a practical option, as data collection is an inherent condition
-of many essential societal transactions''
-\cite{brunton2011vernacular}
-
-\subsection{Data, Capta, Fiat Data, Exhaust Data - and the impossibility
-of limiting data diffusion}
 
 Increasingly, in order to utilise services, we must provide our data to third
 parties. This ranges from mobile phone numbers being required for Yahoo
 accounts, to location data being shared with Foursquare or Grindr, to the NHS
-adding personal health information to centralised databases. We call this fiat
-data - an organisation uses its position to demand (by fiat) the disclosure of
-certain information in return for use of its services. In some cases, this is a
+adding personal health information to centralised databases. 
+
+\emph{capta}---Dodge/Kitchin \cite{dodge2005Forgetting}---from \emph{capere}
+
+There is a related notion to capta which we call \emph{fiat data} - an
+organisation uses its position to demand (by fiat) the disclosure of certain
+information in return for use of its services. In some cases, this is a
 necessary requirement for the service to be worthwhile, but in many cases it
-represents an attempt by the organisation to create a monetizable product from its users.
+represents an attempt by the organisation to create a monetizable product from
+its users. One reaction would be be to reject the services which require data;
+to \emph{opt-out}, but as Brunton and Nissenbaum put it:
+``Refusal is not a practical option, as data collection is an inherent condition
+of many essential societal transactions''
+\cite{brunton2011vernacular}
+
+\subsection*{Sharing is a loss of control}
 
 Sharing data, by definition, is the entrusting of other parties with
 information; this necessarily involves relinquishing control over how it is
@@ -105,23 +110,53 @@ malice accidents can expose vast swathes of personal data, or court proceedings
 may force private communications to become public - the Enron emails still
 represent the largest publicly available corpus of private emails.  
 
-\subsection{Multiple Identity}
+Brad Templeton: ``Beware of time travelling robots from the future'' or ``Would
+you have liked to be gay 40 years ago in a monitored society? Or an enemy of J.
+Edgar Hoover with modern tools in his hands?'' \cite{templetonWatched}
+Future tools will enable greater extraction and analysis of data after the fact;
+
+\subsection*{The case for lying and the importance of anonymity}
+
+White lies can aid in social network growth: \cite{iniguez2014Deception}
+
+Most, if not all, social interactions 
+involve both strategic omissions and various kinds of lies and
+non-truths to manage the myriad conflicting social demands placed upon us. 
+
+Butler Lies: \cite{hancock2009butler}
+
+Translucence: ``What we say and do with another person depends on who, and how
+many, are watching.'' - \cite{erickson2000Translucence}
+
+Contrast with Transparent society \cite{brin1999transparent}; power imbalance
+between parties.
+
+\subsection*{Multiple Identity}
+
 
 A natural part of online life is the ability to tailor the persona we present to
 different communities and contexts. An individual may want to disclose certain
 things to their professional colleagues, while presenting differently to friends
-and family or non-mainstream friend groups. Sharing certain personal data is a
-barrier to this, as its basis in physical fact provides multiple opportunities
-for joining up otherwise separate databases. Most, if not all, social
-interactions involve both strategic omissions and various kinds of lies and
-non-truths to manage the myriad conflicting social demands placed upon us. The
+and family or non-mainstream friend groups. 
+\todo{Content creation on youtube}
+\todo{Ben Dalton's thesis about Persona's throughout the agents}
+
+\subsection*{Why doing it socially is difficult}
+
+Sharing certain personal data is a barrier to anonymity and obfuscation; 
+data which is rooted in physical fact provides multiple opportunities for
+joining up otherwise separate databases. 
+The
 lie maintenance required to avoid discovery may be trivial (``sorry, I’m hungry,
 have to go!'') but may become significantly more complicated as lies extend over
-time, and become woven into the social fabric.
+time, and become woven into the social fabric. The ability to compare
+multiple accounts of history---especially once the time travelling
+robots are involved---means that dissonance within the social
+fabric is more obvious than weaknesses in a single thread.
 
-\subsection{Why doing it socially is difficult}
 
-\subsection{The case for lying and the importance of anonymity}
+
+
 
 \subsection{Personal Data Stores - allies on the intimacy battleground}
 
@@ -175,6 +210,18 @@ Types of disinformation \cite{alexander2010Disinformation}:
   density space
 \end{description}
 
+
+Some existing stuff and the things we can link it to later
+
+\begin{itemize}
+  \item TrackMeNot generates plausible google searches (Chaff)
+  \item FaceCloak? Encrypts facebook data
+  \item CacheCloak - sends a range of plausible future paths to location based
+  services (Palimpsestification)
+  \item Shopping card loyalty swaps (Account Sharing)
+  \item DuckDuckGo - mixing up user searchers (Account Sharing, no cleverness)
+  \item CVDazzle
+\end{itemize}
 
 
 
@@ -347,7 +394,8 @@ notarized point does not prove that we were not anywhere else.
 Notarization does not necessitate revealing the data itself. For instance,
 when submitting a location, a representation of the time and place could be
 hashed, and this hash notarized (Figure \ref{fig:Notarization}a). Additionally,
-points can be notarized in sequence, so that we can demonstrate contiguous sub-sequences of points as having been provided previously; by
+points can be notarized in sequence, so that we can demonstrate contiguous sub-sequences 
+of points as having been provided previously; by
 hashing the current location with the previous location, we can link the points
 together, to build up confidence in the notarized results (Figure
 \ref{fig:Notarization}b).
