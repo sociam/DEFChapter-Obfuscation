@@ -327,6 +327,7 @@ which acts on behalf of the user to modify the data which they provide.
 \subsection{Single Player Strategies}
 
 \fig[1.05]{SinglePlayerObfuscation}{Obfuscation strategies for the lone agent}
+
 Figure \ref{fig:SinglePlayerObfuscation} lists a collection of possible
 obfuscation strategies. In all cases, a fictitious one-dimensional ``location"
 measurement is plotted against time, to give a sense of how an
@@ -341,43 +342,74 @@ strategy we discuss: \begin{inparaenum}[\itshape i\upshape)]
 \item some of the systems which do this currently.
 \end{inparaenum}
 
+\subsubsection{Chaff}
+
+World War II fighter planes would emit clouds of radar reflective
+sheets---\emph{chaff}---which created multiple traces the screens of radar
+operators, and hence disguised the true position of the aircraft. In a similar
+manner, we can add in multiple location datapoints alongside the real ones. This
+is the one of the few methods where the complete, accurate datastream is stored.
+Hence the user can still access any benefits which rely on accurate information. However,
+adding a multitude of randomised points to a service which expects a single
+contiguous trace is both easily detectable, and may break functionality---a
+run tracking application would be likely to give unreliable distance estimations
+in the presence of chaff.
+
 \subsubsection{Noise injection}
 
 The most computationally simple form of obfuscation is the addition of noise to
 the reports which are sent to the semi-trusted party. Here, the points which are
 submitted deviate from the true values in a random manner. This allows the user
 to conceal their exact location, while giving a broad indication of where they
-are.
+are. Depending on the level of noise, this can allow the use of location
+based services without revealing much about actual behaviour. For example, it
+might reveal your location on the high street so you can arrange to meet
+friends, without revealing which shops you were visiting. This is compatible
+with services which expect coherent location data, and may be indistinguishable
+from the inaccuracies of the location sensors. One downside is that the ``true''
+location traces are not present in the record of the service.
+\todo{examples?}
 
-\todo{Why?} Avoid paparazzi/stalkers; conceal preferences - know you're in the
-high street, but can't tell if you're buying texbooks in Waterstones or beer in
-the White Horse
+\subsubsection{Coarsened Granularity (or Quantisation)}
 
-\subsubsection{Chaff}
-\begin{itemize}
-  \item Add in lots of extra points, with little relation to the real values
-  \item Computationally easy
-  \item Can include the real points
-  \item Disturbs services which expect a single consistent trace
-\end{itemize}
+Rather than adding noise to the data being sent, it can instead be quantised to
+a coarser granularity, akin to blurring, or zooming out on a map. Again, this is
+a technique which may help to derive useful information from the service,
+without revealing more than is necessary: using a service to find friends in the
+same city should only require city level information to be shared. An example of
+this can be found in Android's permission system, which has separate controls
+for \verb|ACCESS_COARSE_LOCATION| versus \verb|ACCESS_FINE_LOCATION|; similarly,
+posted letters may be signed with a city rather than a street address.
 
 \subsubsection{Systematic Deviation}
-\begin{itemize}
-  \item Modify specific points
-  \item e.g. hid that we're going to ballet lessons, and pretend we're at the
-  boxing gym instead
-  \item Computational support: Can use services to find most useful nearby
-  places to pretend to be at; allows for automatic, thematic deviations
-\end{itemize}
+
+In some cases, it may be possible to introduce systematic deviations into the
+digital record. In order to this, the user needs to be able to define which
+points to alter, and what to replace them with. One possibility would be
+thematic replacement---``hide the times I went to the pub by saying I
+was at a cafe''. It is likely that this will require some form of computational
+support to i) identify targets for replacement as they occur and ii) find
+suitable replacements. Using this technique, some, but not all of the true data
+is stored; however derived information---such as beverage preferences in the
+example above---can be wildly and purposefully distorted. The nature and fact of
+the distortions may be hard to uncover, as no simulatneous traces or
+strange movement patterns are produced. Depending on the domain, subtle
+alterations may have large effects.
+\todo{examples?}
 
 \subsubsection{Pretend to be me}
-\begin{itemize}
-  \item Generate ``user-plausible'' data, while the user deviates from their
-  norm
-  \item For instance, pretend to be at home while actually being on holiday
-  \item CompSupp: have a model of normal behaviour which can be used to generate
-  fake data
-\end{itemize}
+
+With increasing computational support, it becomes possible to create a model of
+the user which outputs plausible ``normal'' data. This can then be used to
+replace periods of abnormal behaviour, or even replace normal behaviour with
+statistically similar but untrue data. An early example is when neighbours (or
+automatic switches) are employed to turn lights on and off in a home which has
+been vacated for the holiday, disguising the true anomalous data of a dark,
+empty house with the appearance of normal occupation. Similarly, one might avoid
+making Facebook posts which indicate an absence, to avoid burglary. This kind of
+deception can be difficult to achieve; however computational systems are
+emerging which can aid users, for example Beyer's digital alibi system
+\cite{beyer2014Alibi}.
 
 \subsubsection{Virtual Holidays}
 \begin{itemize}
@@ -409,6 +441,8 @@ co-location; ii) supporting information; iii) account sharing}
   \item Like swapping supermarket discount cards
   \item CompSupp: which account, when? discovery and sharing etc.
 \end{itemize}
+
+\subsubsection{Voltron!}
 
 \section{Operationalisation - managing deception and its side effects}
 
@@ -450,13 +484,14 @@ that i) the given data was supplied and ii) when it was supplied. Hashes are
 used so that the data is not publicly shared. b) If the hash of the previous
 submission is included, then sequences of consecutive points can be verified.}
 
-Third party notarization services can be employed. They take
-in some datum, and provide a hash/URL which can be visited to verify that that piece of data was
-provided at a certain time. For example, if someone wants to make a prediction
+Third party digital notarization services can be employed\footnote{e.g.
+\url{http://virtual-notary.org/}, a free service hosted at Cornell University}.
+These services take in some document or datum, and provide a certificate which
+can be used to verify that that piece of data was provided at a certain time. For example, if someone wants to make a prediction
 for the outcome of a football match, they could notarize that before the match,
 and then subsequently prove that they had made the prediction beforehand. It is
-generall not possible to prove that they only made a single prediction, however,
-so this technique is most suitable when the range of possible things to notarize
+generally not possible to prove that they only made a single prediction,
+however, so this technique is most suitable when the range of possible things to notarize
 is so large as to make notarizing the entire space infeasible.
 
 With regard to personal data, we can notarize our true data stream as we produce
@@ -483,6 +518,11 @@ together, to build up confidence in the notarized results (Figure
   \item Viability - how do services react when we fill them full of noise?
   Plausible versions of these techniques
   \item Ethics - is this OK?
+  \item Obfuscation evolves in lockstep with systems to see through it; future
+  people will be better at spotting constructed points.
+  \item In the short term services will start to become more suspicious about
+  the data that goes into them; start rejecting points which represent causality
+  violations.
 \end{itemize}
 
 %%%%%%%%%%% The bibliography starts:
