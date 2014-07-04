@@ -324,15 +324,16 @@ techniques, we would like to enlist computational support (Figure
 \ref{fig:Mediation}b). This typified, but not limited to mediation from a PDS
 which acts on behalf of the user to modify the data which they provide.
 
-\subsection{Single Player Strategies}
+\subsection{Strategies for the lone obfuscator}
 
 \fig[1.05]{SinglePlayerObfuscation}{Obfuscation strategies for the lone agent}
 
 Figure \ref{fig:SinglePlayerObfuscation} lists a collection of possible
 obfuscation strategies. In all cases, a fictitious one-dimensional ``location"
 measurement is plotted against time, to give a sense of how an
-individual's position in space changes. Figure \ref{SinglePlayerObfuscation}a is
-the true baseline, with a curve indicating the continuous true position, and the dots
+individual's position in space changes. Figure
+\ref{fig:SinglePlayerObfuscation}a is the true baseline, with a 
+curve indicating the continuous true position, and the dots
 representing reports of this position to the location-aware service. For each
 strategy we discuss: \begin{inparaenum}[\itshape i\upshape)]
 \item what kind of alteration of baseline data is performed;
@@ -411,22 +412,51 @@ deception can be difficult to achieve; however computational systems are
 emerging which can aid users, for example Beyer's digital alibi system
 \cite{beyer2014Alibi}.
 
-\subsubsection{Virtual Holidays}
-\begin{itemize}
-  \item want to pretend that we're deviation from normal when we're not
-  \item i.e. pretend we've gone to a conference when we haven't
-  \item CompSupp: create a theme and help manage the deception
-\end{itemize}
+\subsubsection{Coherent Deviation}
+As the converse of simulating normality, the user may wish to pretend to be
+somewhere where they are not \todo{more motivation for Alibot!}. This is similar
+to creating systematic deviations, but on a grander scale; the user would like
+to create a narrative for the deviation, and then have suitable data points
+constructed. For example, the use might pretend to be on holiday, or at a
+conference, and would like location traces which match that narrative to be
+created, such as going to the convention centre in the day, and returning to a
+hotel at night. This requires a computational model of user behaviour which can
+be applied to new locations---a non trivial task. However there is the potential
+to create obfuscated data which is difficult to distinguish from standard
+behaviour. \todo{examples}
 
-\subsection{Multiplayer Obfuscation}
+\subsubsection{Palimpsestification}
+Taking the idea of coherent deviations a stage further, and combining with the
+idea of \emph{chaff}, the user could create multiple overlapping traces; each
+trace would be locally coherent and plausible, but someone inspecting the data would have no way to know which is the real one.
+This is similar to the strategy of CacheCloak \todo{reference}, which
+continuously generates sheaves of probable future behaviour and searches
+location based services relevant to each  path. The computational support
+required is similar to the coherent deviation example---to be able to run a
+model of the user's behaviour in novel locations---although more coordination
+might be required between the stories. The tradeoff is that while the true
+location data can be entered along with the generated points, the deception is
+obvious, and location based services may become upset at the multiple paths.
+
+\subsection{Collaborative Obfuscation}
 \fig{MultiPlayerObfuscation}{Multiplayer obfuscaction strategies: i) artificial
 co-location; ii) supporting information; iii) account sharing}
 
+Including others in the obfuscation challenge opens up a range of new 
+strategies, where collusion can aid in the creation of otherwise unachievable
+datastreams, or increase the veracity of artificially created data. Generally
+the possibilities in computational systems are analagous to pre-computational
+possibilities; computational support tends to be in the form of coordination to
+find collaborators or and check coherence of data points.
+
 \subsubsection{Artificial co-location}
-\begin{itemize}
-  \item We can pretend that we're in the same place as our friends
-  \item CompSupp: need to coordinate lies with friends
-\end{itemize}
+One way to obtain a realistic but untrue location trace is to re-present the
+trace of a collaborator. This can look like relatively natural
+behaviour; two people meeting up to carry out joint activities or socialisation.
+Computational support here can involve finding accomplices to ``co-locate''
+with---people who are willing to share their location, and are behaving in ways
+which match the desired story---as well as the technical business of
+transferring location devices between accounts.
 
 \subsubsection{Supporting Evidence}
 \begin{itemize}
@@ -435,6 +465,8 @@ co-location; ii) supporting information; iii) account sharing}
 \end{itemize}
 
 \subsubsection{Account Sharing}
+In a similar manner to the swapping of loyalty cards discussed in
+\cite{brunton2011vernacular}, users of services can share accounts.
 \begin{itemize}
   \item A group of people share accounts, with some way to decide which is
   used, e.g. accounts covering geographic areas
@@ -442,7 +474,6 @@ co-location; ii) supporting information; iii) account sharing}
   \item CompSupp: which account, when? discovery and sharing etc.
 \end{itemize}
 
-\subsubsection{Voltron!}
 
 \section{Operationalisation - managing deception and its side effects}
 
