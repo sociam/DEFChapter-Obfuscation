@@ -76,12 +76,16 @@ Obfuscation; Data politics; Personal Data Stores; Social Machines; Pants-on-fire
 
 \section*{Introduction}
 
+%% maxxie wrote some stuff here
+
+Privacy advocates have been accused of advocating methods to enable criminals, stalkers, harassers \cite{}, miscreants, and even terrorists \cite{} to more easily conduct their misdeeds against society. The ``I have nothing to hide; therefore I should not care'' argument \cite{} used often in defense of ignoring privacy in the early days of targeted advertising and the Web still re-surfaces today. But as theoretical arguments of what \emph{may} become have been replaced by tangible examples of what has actually has, this, among other arguments have become thoroughly dismantled.  The sophisticated methods being used to track and pinpoint details of individuals has not been met with a corresponding increase in counter-tracking and counter-surveillance tools; as a result, people are being subject to an unprecedented barrage of targeted attempts to behaviourally manipulate them - often in ways too subtle for them to perceive (e.g. \cite{facebookstudy}).
+
+Thus, this paper takes the position that privacy protection not merely as a concern for a minority with peculiar sensititivities towards being seen or exposed, but instead, as a set of capabilities necessary for preserving individual autonomy and well-being, in an economy where personal data has become the most precious digital commodity.
+
+In this paper, we discuss and analyse methods of privacy protection that advance beyond the current state of anonymisation tools that merely obscure the tracks of individuals towards mechanisms towards those employ methods borrowed from information warfare \cite{}, in order to allow individuals to regain autonomy from systems of behavioural control.  We first discuss X and Y, followed by a a survey of lying and falsification in context-aware systems, current anonymisation ad privacy tools. This is followed by a complete overview of strategies
+
 \subsection*{The rise of personal data and services reliant on it, and relation
 so surveillance}
-
-
-
-
 
 As we pass through the digitally augmented world that we collectively inhabit,
 the set of actions with the potential to produce data grows year on year.
@@ -151,15 +155,16 @@ information and communicate.
 
 Sharing data, by definition, is the entrusting of other parties with
 information; this necessarily involves relinquishing control over how it is
-subsequently handled and disseminated. However, data is persistent, while people
+subsequently handled and disseminated. \todo{eMax: Do we want to mention DRM here as a futile attempt to control how data is used once it's shared?} \todo{There is so much more we can say right here about this.}  However, data is persistent, while people
 and contexts change. A government may decide to share previously confidential
-data, as in the case of the recent care.data fiasco in the UK; a company can be
+data, as in the case of the recent \emph{care.data} fiasco in the UK; a company can be
 bought and its assets acquired–the purchase of Moves by Facebook raised issues
 around the terms and conditions of data handling companies; and even without
 malice accidents can expose vast swathes of personal data, or court proceedings
 may force private communications to become public - the Enron emails still
-represent the largest publicly available corpus of private emails.  
+represent the largest publicly available corpus of private emails. \todo{What you are sort of getting at as ``rights'' to data and the lack of regulation thereof; there is no notion of data ownership in any legisltative form, nor is there a notion of course of maintenance and tansfer of such terms of ownership - except in the most select of contextx, people have no legal ``right to even their own data''}
 
+\emph{emax: very abrupt transition here}
 Brad Templeton: ``Beware of time travelling robots from the future'' or ``Would
 you have liked to be gay 40 years ago in a monitored society? Or an enemy of J.
 Edgar Hoover with modern tools in his hands?'' \cite{templetonWatched}
@@ -258,11 +263,28 @@ that they can be verified in the future without revealing them as true at the
 time.
 
 \section{Review of current approaches and tools} 
+\todo{Max to do some writing}
 
-Obfuscation symposium: \url{http://obfuscationsymposium.org/}
-Surveilland and Society:
-\url{http://library.queensu.ca/ojs/index.php/surveillance-and-society}
 
+
+\begin{itemize}
+  \item The revolution has started!
+  \item tor, anonymous remailers, burner phones, gotta change up, yo!
+  \item HTTPSEverywhere
+  \item Surveillance and Society: \url{http://library.queensu.ca/ojs/index.php/surveillance-and-society}
+  \item CVDazzle
+  \item Heat-signature cloaking burqas, hoodies
+  \item Bluetooth and MAC randomisation in iOS 8
+  \item Silent Circle, Cryptocat
+  \item DNT in IE10
+  \item Adblock/Adblock Plus, Privacy Badger, Disconnect.Me
+  \item HTTPsEverywhere
+  \item VPNs 
+\end{itemize}
+
+Open source and trustworthiness
+
+Theory of obfuscation:
 Types of disinformation \cite{alexander2010Disinformation}:
 \begin{description}
   \item[redaction] is hiding some or all of the information in a message
@@ -273,7 +295,6 @@ Types of disinformation \cite{alexander2010Disinformation}:
   \item[curveball] add extra distracting information, push message into low
   density space
 \end{description}
-
 
 Some existing stuff and the things we can link it to later
 
@@ -291,8 +312,8 @@ Some existing stuff and the things we can link it to later
 
 
 
-\section{A selection of PDS enabled obfuscation strategies}
-
+\section{A selection of obfuscation strategies}
+\todo{Laura to write descriptions and try redoing with maps}
 Alexander's taxonomy \cite{alexander2010Disinformation} discusses several types
 of disinformation which relate to modifying single messages. In contrast, due to
 the pervasiveness of modern communications, we are concerned with modifying
@@ -324,14 +345,16 @@ techniques, we would like to enlist computational support (Figure
 \ref{fig:Mediation}b). This typified, but not limited to mediation from a PDS
 which acts on behalf of the user to modify the data which they provide.
 
-\subsection{Single Player Strategies}
+\subsection{Strategies for the lone obfuscator}
 
 \fig[1.05]{SinglePlayerObfuscation}{Obfuscation strategies for the lone agent}
+
 Figure \ref{fig:SinglePlayerObfuscation} lists a collection of possible
 obfuscation strategies. In all cases, a fictitious one-dimensional ``location"
 measurement is plotted against time, to give a sense of how an
-individual's position in space changes. Figure \ref{SinglePlayerObfuscation}a is
-the true baseline, with a curve indicating the continuous true position, and the dots
+individual's position in space changes. Figure
+\ref{fig:SinglePlayerObfuscation}a is the true baseline, with a 
+curve indicating the continuous true position, and the dots
 representing reports of this position to the location-aware service. For each
 strategy we discuss: \begin{inparaenum}[\itshape i\upshape)]
 \item what kind of alteration of baseline data is performed;
@@ -341,60 +364,120 @@ strategy we discuss: \begin{inparaenum}[\itshape i\upshape)]
 \item some of the systems which do this currently.
 \end{inparaenum}
 
+\subsubsection{Chaff}
+
+World War II fighter planes would emit clouds of radar reflective
+sheets---\emph{chaff}---which created multiple traces the screens of radar
+operators, and hence disguised the true position of the aircraft. In a similar
+manner, we can add in multiple location datapoints alongside the real ones. This
+is the one of the few methods where the complete, accurate datastream is stored.
+Hence the user can still access any benefits which rely on accurate information. However,
+adding a multitude of randomised points to a service which expects a single
+contiguous trace is both easily detectable, and may break functionality---a
+run tracking application would be likely to give unreliable distance estimations
+in the presence of chaff.
+
 \subsubsection{Noise injection}
 
 The most computationally simple form of obfuscation is the addition of noise to
 the reports which are sent to the semi-trusted party. Here, the points which are
 submitted deviate from the true values in a random manner. This allows the user
 to conceal their exact location, while giving a broad indication of where they
-are.
+are. Depending on the level of noise, this can allow the use of location
+based services without revealing much about actual behaviour. For example, it
+might reveal your location on the high street so you can arrange to meet
+friends, without revealing which shops you were visiting. This is compatible
+with services which expect coherent location data, and may be indistinguishable
+from the inaccuracies of the location sensors. One downside is that the ``true''
+location traces are not present in the record of the service.
+\todo{examples?}
 
-\todo{Why?} Avoid paparazzi/stalkers; conceal preferences - know you're in the
-high street, but can't tell if you're buying texbooks in Waterstones or beer in
-the White Horse
+\subsubsection{Coarsened Granularity (or Quantisation)}
 
-\subsubsection{Chaff}
-\begin{itemize}
-  \item Add in lots of extra points, with little relation to the real values
-  \item Computationally easy
-  \item Can include the real points
-  \item Disturbs services which expect a single consistent trace
-\end{itemize}
+Rather than adding noise to the data being sent, it can instead be quantised to
+a coarser granularity, akin to blurring, or zooming out on a map. Again, this is
+a technique which may help to derive useful information from the service,
+without revealing more than is necessary: using a service to find friends in the
+same city should only require city level information to be shared. An example of
+this can be found in Android's permission system, which has separate controls
+for \verb|ACCESS_COARSE_LOCATION| versus \verb|ACCESS_FINE_LOCATION|; similarly,
+posted letters may be signed with a city rather than a street address.
 
 \subsubsection{Systematic Deviation}
-\begin{itemize}
-  \item Modify specific points
-  \item e.g. hid that we're going to ballet lessons, and pretend we're at the
-  boxing gym instead
-  \item Computational support: Can use services to find most useful nearby
-  places to pretend to be at; allows for automatic, thematic deviations
-\end{itemize}
+
+In some cases, it may be possible to introduce systematic deviations into the
+digital record. In order to this, the user needs to be able to define which
+points to alter, and what to replace them with. One possibility would be
+thematic replacement---``hide the times I went to the pub by saying I
+was at a cafe''. It is likely that this will require some form of computational
+support to i) identify targets for replacement as they occur and ii) find
+suitable replacements. Using this technique, some, but not all of the true data
+is stored; however derived information---such as beverage preferences in the
+example above---can be wildly and purposefully distorted. The nature and fact of
+the distortions may be hard to uncover, as no simulatneous traces or
+strange movement patterns are produced. Depending on the domain, subtle
+alterations may have large effects.
+\todo{examples?}
 
 \subsubsection{Pretend to be me}
-\begin{itemize}
-  \item Generate ``user-plausible'' data, while the user deviates from their
-  norm
-  \item For instance, pretend to be at home while actually being on holiday
-  \item CompSupp: have a model of normal behaviour which can be used to generate
-  fake data
-\end{itemize}
 
-\subsubsection{Virtual Holidays}
-\begin{itemize}
-  \item want to pretend that we're deviation from normal when we're not
-  \item i.e. pretend we've gone to a conference when we haven't
-  \item CompSupp: create a theme and help manage the deception
-\end{itemize}
+With increasing computational support, it becomes possible to create a model of
+the user which outputs plausible ``normal'' data. This can then be used to
+replace periods of abnormal behaviour, or even replace normal behaviour with
+statistically similar but untrue data. An early example is when neighbours (or
+automatic switches) are employed to turn lights on and off in a home which has
+been vacated for the holiday, disguising the true anomalous data of a dark,
+empty house with the appearance of normal occupation. Similarly, one might avoid
+making Facebook posts which indicate an absence, to avoid burglary. This kind of
+deception can be difficult to achieve; however computational systems are
+emerging which can aid users, for example Beyer's digital alibi system
+\cite{beyer2014Alibi}.
 
-\subsection{Multiplayer Obfuscation}
+\subsubsection{Coherent Deviation}
+As the converse of simulating normality, the user may wish to pretend to be
+somewhere where they are not \todo{more motivation for Alibot!}. This is similar
+to creating systematic deviations, but on a grander scale; the user would like
+to create a narrative for the deviation, and then have suitable data points
+constructed. For example, the use might pretend to be on holiday, or at a
+conference, and would like location traces which match that narrative to be
+created, such as going to the convention centre in the day, and returning to a
+hotel at night. This requires a computational model of user behaviour which can
+be applied to new locations---a non trivial task. However there is the potential
+to create obfuscated data which is difficult to distinguish from standard
+behaviour. \todo{examples}
+
+\subsubsection{Palimpsestification}
+Taking the idea of coherent deviations a stage further, and combining with the
+idea of \emph{chaff}, the user could create multiple overlapping traces; each
+trace would be locally coherent and plausible, but someone inspecting the data would have no way to know which is the real one.
+This is similar to the strategy of CacheCloak \todo{reference}, which
+continuously generates sheaves of probable future behaviour and searches
+location based services relevant to each  path. The computational support
+required is similar to the coherent deviation example---to be able to run a
+model of the user's behaviour in novel locations---although more coordination
+might be required between the stories. The tradeoff is that while the true
+location data can be entered along with the generated points, the deception is
+obvious, and location based services may become upset at the multiple paths.
+
+\subsection{Collaborative Obfuscation}
 \fig{MultiPlayerObfuscation}{Multiplayer obfuscaction strategies: i) artificial
 co-location; ii) supporting information; iii) account sharing}
 
+Including others in the obfuscation challenge opens up a range of new 
+strategies, where collusion can aid in the creation of otherwise unachievable
+datastreams, or increase the veracity of artificially created data. Generally
+the possibilities in computational systems are analagous to pre-computational
+possibilities; computational support tends to be in the form of coordination to
+find collaborators or and check coherence of data points.
+
 \subsubsection{Artificial co-location}
-\begin{itemize}
-  \item We can pretend that we're in the same place as our friends
-  \item CompSupp: need to coordinate lies with friends
-\end{itemize}
+One way to obtain a realistic but untrue location trace is to re-present the
+trace of a collaborator. This can look like relatively natural
+behaviour; two people meeting up to carry out joint activities or socialisation.
+Computational support here can involve finding accomplices to ``co-locate''
+with---people who are willing to share their location, and are behaving in ways
+which match the desired story---as well as the technical business of
+transferring location devices between accounts.
 
 \subsubsection{Supporting Evidence}
 \begin{itemize}
@@ -403,12 +486,15 @@ co-location; ii) supporting information; iii) account sharing}
 \end{itemize}
 
 \subsubsection{Account Sharing}
+In a similar manner to the swapping of loyalty cards discussed in
+\cite{brunton2011vernacular}, users of services can share accounts.
 \begin{itemize}
   \item A group of people share accounts, with some way to decide which is
   used, e.g. accounts covering geographic areas
   \item Like swapping supermarket discount cards
   \item CompSupp: which account, when? discovery and sharing etc.
 \end{itemize}
+
 
 \section{Operationalisation - managing deception and its side effects}
 
@@ -450,13 +536,14 @@ that i) the given data was supplied and ii) when it was supplied. Hashes are
 used so that the data is not publicly shared. b) If the hash of the previous
 submission is included, then sequences of consecutive points can be verified.}
 
-Third party notarization services can be employed. They take
-in some datum, and provide a hash/URL which can be visited to verify that that piece of data was
-provided at a certain time. For example, if someone wants to make a prediction
+Third party digital notarization services can be employed\footnote{e.g.
+\url{http://virtual-notary.org/}, a free service hosted at Cornell University}.
+These services take in some document or datum, and provide a certificate which
+can be used to verify that that piece of data was provided at a certain time. For example, if someone wants to make a prediction
 for the outcome of a football match, they could notarize that before the match,
 and then subsequently prove that they had made the prediction beforehand. It is
-generall not possible to prove that they only made a single prediction, however,
-so this technique is most suitable when the range of possible things to notarize
+generally not possible to prove that they only made a single prediction,
+however, so this technique is most suitable when the range of possible things to notarize
 is so large as to make notarizing the entire space infeasible.
 
 With regard to personal data, we can notarize our true data stream as we produce
@@ -483,6 +570,11 @@ together, to build up confidence in the notarized results (Figure
   \item Viability - how do services react when we fill them full of noise?
   Plausible versions of these techniques
   \item Ethics - is this OK?
+  \item Obfuscation evolves in lockstep with systems to see through it; future
+  people will be better at spotting constructed points.
+  \item In the short term services will start to become more suspicious about
+  the data that goes into them; start rejecting points which represent causality
+  violations.
 \end{itemize}
 
 %%%%%%%%%%% The bibliography starts:
