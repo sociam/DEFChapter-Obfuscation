@@ -42,7 +42,7 @@
 %
 %\pretitle{}
 \title{Social Palimpsests - clouding the lens of the personal panopticon}
-\runningtitle{\ldots or ``Suck my tailpipe'' - how I learned to stop worrying
+\subtitle{\ldots or ``Suck my tailpipe'' - how I learned to stop worrying
 and toxify my exhaust data}
 %\subtitle{}
 
@@ -78,11 +78,34 @@ Obfuscation; Data politics; Personal Data Stores; Social Machines; Pants-on-fire
 
 %% maxxie wrote some stuff here
 
-Privacy advocates have been accused of advocating methods to enable criminals, stalkers, harassers \cite{}, miscreants, and even terrorists \cite{} to more easily conduct their misdeeds against society. The ``I have nothing to hide; therefore I should not care'' argument \cite{} used often in defense of ignoring privacy in the early days of targeted advertising and the Web still re-surfaces today. But as theoretical arguments of what \emph{may} become have been replaced by tangible examples of what has actually has, this, among other arguments have become thoroughly dismantled.  The sophisticated methods being used to track and pinpoint details of individuals has not been met with a corresponding increase in counter-tracking and counter-surveillance tools; as a result, people are being subject to an unprecedented barrage of targeted attempts to behaviourally manipulate them - often in ways too subtle for them to perceive (e.g. \cite{facebookstudy}).
+Privacy advocates have been accused of advocating methods to enable criminals,
+stalkers, harassers \cite{}, miscreants, and even terrorists \cite{} to more
+easily conduct their misdeeds against society. The ``I have nothing to hide;
+therefore I should not care'' argument \cite{} used often in defense of ignoring
+privacy in the early days of targeted advertising and the Web still re-surfaces
+today. But as theoretical arguments of what \emph{may} become have been replaced
+by tangible examples of what has actually has, this, among other arguments have
+become thoroughly dismantled.  The sophisticated methods being used to track and
+pinpoint details of individuals has not been met with a corresponding increase
+in counter-tracking and counter-surveillance tools; as a result, people are
+being subject to an unprecedented barrage of targeted attempts to behaviourally
+manipulate them - often in ways too subtle for them to perceive (e.g.
+\cite{facebookstudy}).           
 
-Thus, this paper takes the position that privacy protection not merely as a concern for a minority with peculiar sensititivities towards being seen or exposed, but instead, as a set of capabilities necessary for preserving individual autonomy and well-being, in an economy where personal data has become the most precious digital commodity.
+Thus, this paper takes the position that privacy protection not merely as a
+concern for a minority with peculiar sensititivities towards being seen or
+exposed, but instead, as a set of capabilities necessary for preserving
+individual autonomy and well-being, in an economy where personal data has become
+the most precious digital commodity.       
 
-In this paper, we discuss and analyse methods of privacy protection that advance beyond the current state of anonymisation tools that merely obscure the tracks of individuals towards mechanisms towards those employ methods borrowed from information warfare \cite{}, in order to allow individuals to regain autonomy from systems of behavioural control.  We first discuss X and Y, followed by a a survey of lying and falsification in context-aware systems, current anonymisation ad privacy tools. This is followed by a complete overview of strategies
+In this paper, we discuss and analyse methods of privacy protection that advance
+beyond the current state of anonymisation tools that merely obscure the tracks
+of individuals towards mechanisms towards those employ methods borrowed from
+information warfare \cite{}, in order to allow individuals to regain autonomy
+from systems of behavioural control.  We first discuss X and Y, followed by a a
+survey of lying and falsification in context-aware systems, current
+anonymisation ad privacy tools. This is followed by a complete overview of
+strategies         
 
 \subsection*{The rise of personal data and services reliant on it, and relation
 so surveillance}
@@ -155,25 +178,60 @@ information and communicate.
 
 Sharing data, by definition, is the entrusting of other parties with
 information; this necessarily involves relinquishing control over how it is
-subsequently handled and disseminated. \todo{eMax: Do we want to mention DRM here as a futile attempt to control how data is used once it's shared?} \todo{There is so much more we can say right here about this.}  However, data is persistent, while people
-and contexts change. A government may decide to share previously confidential
-data, as in the case of the recent \emph{care.data} fiasco in the UK; a company can be
-bought and its assets acquired–the purchase of Moves by Facebook raised issues
+subsequently handled and disseminated. 
+\todo{eMax: Do we want to mention DRM here as a futile attempt to control how data is used once it's shared?}
+ \todo{There is so much more we can say right here about this.}  
+
+There are many issues with sharing data, here we higlight four of them:
+\begin{description}
+  \item[Sharing is persistent, while situations evolve;] once data is shared,
+  there is no technical means to revoke it. However, the context around its sharing and the
+  organisations involved are subject to change. 
+  A government may decide to share previously confidential data, as in the case of the recent \emph{care.data} fiasco in the UK; a company can be
+bought and its assets acquired---the purchase of Moves by Facebook raised issues
 around the terms and conditions of data handling companies; and even without
 malice accidents can expose vast swathes of personal data, or court proceedings
 may force private communications to become public - the Enron emails still
-represent the largest publicly available corpus of private emails. \todo{What you are sort of getting at as ``rights'' to data and the lack of regulation thereof; there is no notion of data ownership in any legisltative form, nor is there a notion of course of maintenance and tansfer of such terms of ownership - except in the most select of contextx, people have no legal ``right to even their own data''}
+represent the largest publicly available corpus of private emails. Essentially,
+once data is shared, the sharer has no control over what happens to it.
 
-\emph{emax: very abrupt transition here}
-Brad Templeton: ``Beware of time travelling robots from the future'' or ``Would
+ \todo{What you are sort of getting at as ``rights'' to data and the lack of
+regulation thereof; there is no notion of data ownership in any legisltative
+form, nor is there a notion of course of maintenance and tansfer of such terms
+of ownership - except in the most select of contextx, people have no legal
+``right to even their own data''}
+\item[Technology improves:] what is safe to share now may not be in the
+future. Brad Templeton from the Electronic Freedom Foundation uses the analogy
+of ``Time travelling robots from the future'': the information collected now
+will be subjected to increasingly sophisticated analysis techniques as time
+progresses, so the implications of sharing that information can be far beyond
+expectations. For example, in the future, it may be possible to carry out facial
+recognition on massive quantities of CCTV footage, and reconstruct the movements
+of a large proportion of citizens. This corresponds to the surveillance
+robots coming back in time and monitoring us now. In a similar vein: ``Would
 you have liked to be gay 40 years ago in a monitored society? Or an enemy of J.
-Edgar Hoover with modern tools in his hands?'' \cite{templetonWatched}
-Future tools will enable greater extraction and analysis of data after the fact;
+Edgar Hoover with modern tools in his hands?'' \cite{templetonWatched}. Sharing
+data today cedes control to the entities of tomorrow, with their greatly
+enhanced capabilities.
+\item[De-identification doesn't work:] data is often shared subject to the
+condition that it will only be shared in an \emph{anonymised} or
+\emph{de-identified} form. As a highly public example, Netflix challenged the
+public to create a better recommendation engine, based on a corpus of anonymised
+viewing histories. Subsequently, it was shown that many records within the
+database could be identified by comparison with publicly available
+sources \cite{narayanan2008Deanon}, let alone access to other, non-public data.
+Narayanan and Felten's recent report \cite{narayanan2014Deidentification} explains in a non-technical manner why
+de-idenfication of data remains problematic.
+\item[Databases can be joined:] as more databases of personal information
+become available, whether publicly or privately, the possiblity to match, join,
+correlate and shara data increases, and the effects of single points expand well
+beyond the environment in which they were created or shared. In short, data are
+held in \emph{leaky containers}: ``data move freely between different sectors of
+society with the result that information from discrete contexts, e.g.,
+ private life, work life and shopping, are being mixed rather than contained 
+ separately.''\cite[p.37--44]{lyon2001surveillance}.
+\end{description}
 
-David Lyon: leaky containers ``data move freely between different sectors of
-society with the result that information from discrete contexts, e.g., private
-life, work life and shopping, are being mixed rather than contained
-separately.''
 
 \subsection*{The case for lying and the importance of anonymity}
 
@@ -218,24 +276,6 @@ fabric is more obvious than weaknesses in a single thread.
 
 
 
-\subsection{Personal Data Stores - allies on the intimacy battleground}
-
-Personal data stores (PDS) represent a partial solution to issue of
-presentation: having trusted, user controlled repositories for data enables a
-more user-centric approach to management of capta---those data which we choose
-to take and preserve. Bridges can then be built between personal data stores and
-the rest of the world in order to support the connected, networked interactions
-which users now expect. If these bridges simply share the data, even in a
-controlled manner, nothing has been gained; hence the bridges become conduits
-for manipulating truth and constructing falsehoods. As personal data stores
-accumulate more real-time contextual data about the individual, as well as about
-the individual’s social connections, PDSes can provide support for the often
-stressful and mentally burdensome task of lie maintenance, for example: i)
-identifying when a person's real activities or whereabouts contradict a lie, and
-might be discovered; ii) identifying indirect social channels that could expose
-a lie (e.g. through friends of friends); iii) suggesting appropriate lies to use
-which are least likely to be detected; iv) suggesting individuals to lie to to
-support lie maintenance (e.g. friends of the person being lied to)
 
 \subsection{Why verification and provenance are better than sharing}
 
@@ -572,6 +612,26 @@ user's locations---and individuals can be picked out from very sparse histories
   \item create continuity
   \item act on your behalf
 \end{itemize}
+
+\subsection{Personal Data Stores - allies on the intimacy battleground}
+
+Personal data stores (PDS) represent a partial solution to issue of
+presentation: having trusted, user controlled repositories for data enables a
+more user-centric approach to management of capta---those data which we choose
+to take and preserve. Bridges can then be built between personal data stores and
+the rest of the world in order to support the connected, networked interactions
+which users now expect. If these bridges simply share the data, even in a
+controlled manner, nothing has been gained; hence the bridges become conduits
+for manipulating truth and constructing falsehoods. As personal data stores
+accumulate more real-time contextual data about the individual, as well as about
+the individual’s social connections, PDSes can provide support for the often
+stressful and mentally burdensome task of lie maintenance, for example: i)
+identifying when a person's real activities or whereabouts contradict a lie, and
+might be discovered; ii) identifying indirect social channels that could expose
+a lie (e.g. through friends of friends); iii) suggesting appropriate lies to use
+which are least likely to be detected; iv) suggesting individuals to lie to to
+support lie maintenance (e.g. friends of the person being lied to)
+
 
 \subsection{Verification and provenance mechanisms}
 
