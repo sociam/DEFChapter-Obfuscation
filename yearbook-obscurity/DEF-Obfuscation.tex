@@ -182,7 +182,7 @@ active, since surveillance in this context offers opportunities to take action, 
 information and communicate. 
 \end{quote} \cite{albrechtslund2008online}
 
-In summary, there are multitudinous situtations where we are coerced, cajoled or
+In summary, there are multitudinous situations where we are coerced, cajoled or
 manipulated into sharing our personal data, and the cost of avoiding such
 sharing is increasingly becoming untenable for large sections of the population
 of the industrialised world.
@@ -195,7 +195,7 @@ subsequently handled and disseminated.
 \todo{eMax: Do we want to mention DRM here as a futile attempt to control how data is used once it's shared?}
  \todo{There is so much more we can say right here about this.}  
 
-There are many issues with sharing data, here we higlight four of them:
+There are many issues with sharing data, here we highlight four of them:
 \begin{description}
   \item[Sharing is persistent, while situations evolve;] once data is shared,
   there is no technical means to revoke it. However, the context around its sharing and the
@@ -208,11 +208,6 @@ may force private communications to become public - the Enron emails still
 represent the largest publicly available corpus of private emails. Essentially,
 once data is shared, the sharer has no control over what happens to it.
 
- \todo{What you are sort of getting at as ``rights'' to data and the lack of
-regulation thereof; there is no notion of data ownership in any legisltative
-form, nor is there a notion of course of maintenance and tansfer of such terms
-of ownership - except in the most select of contextx, people have no legal
-``right to even their own data''}
 \item[Technology improves:] what is safe to share now may not be in the
 future. Brad Templeton from the Electronic Freedom Foundation uses the analogy
 of ``Time travelling robots from the future'': the information collected now
@@ -247,6 +242,11 @@ society with the result that information from discrete contexts, e.g.,
  separately.''\cite[p.37--44]{lyon2001surveillance}.
 \end{description}
 
+ \todo{What you are sort of getting at as ``rights'' to data and the lack of
+regulation thereof; there is no notion of data ownership in any legisltative
+form, nor is there a notion of course of maintenance and tansfer of such terms
+of ownership - except in the most select of contextx, people have no legal
+``right to even their own data''}
 
 \subsection*{The case for lying and the importance of anonymity}
 
@@ -271,7 +271,7 @@ A natural part of online life is the ability to tailor the persona we present to
 different communities and contexts. An individual may want to disclose certain
 things to their professional colleagues, while presenting differently to friends
 and family or non-mainstream friend groups. 
-\todo{Content creation on youtube}
+\todo{Amy's Content creation on youtube}
 \todo{Ben Dalton's thesis about Persona's throughout the agents}
 
 \subsection*{Why doing it socially is difficult}
@@ -279,8 +279,7 @@ and family or non-mainstream friend groups.
 Sharing certain personal data is a barrier to anonymity and obfuscation; 
 data which is rooted in physical fact provides multiple opportunities for
 joining up otherwise separate databases. 
-The
-lie maintenance required to avoid discovery may be trivial (``sorry, I’m hungry,
+The lie maintenance required to avoid discovery may be trivial (``sorry, I’m hungry,
 have to go!'') but may become significantly more complicated as lies extend over
 time, and become woven into the social fabric. The ability to compare
 multiple accounts of history---especially once the time travelling
@@ -294,18 +293,21 @@ fabric is more obvious than weaknesses in a single thread.
 
 \subsection{Why verification and provenance are better than sharing}
 
-``Any model of privacy that focuses on the control of information will fail.''
-``I call this practice “social steganography.” Only 
-those who are in the know have the necessary information to look for and interpret the information 
-provided.''
-dana boyd \cite{boyd2012Networked}.
-
 Sharing is a crude mechanism. Once data has been shared, the originator can no
 longer exert control over it, and must rely on the behaviour of the recipient,
-which as noted may fail to meet user expectations. Validation, however is a more
-subtle tool: if a user’s personal dataset can be made sufficiently questionable
-as to be useless on its own, then locus of control shifts to the user choosing
-to validate parts of the dataset, which can be performed in a more nuanced,
+which as noted may fail to meet user expectations. As dana boyd
+notes: ``Any model of privacy that focuses on the control of information will
+fail.''. This leads the teenagers that dana studies to
+engage in \emph{social steganography}, manipulating messages so that ``Only 
+those who are in the know have the necessary information to look for and interpret the information 
+provided.''\cite{boyd2012Networked}. Strategies like this work when there is a
+difference in understanding between the surveilled and the surveiller, and
+collapses as soon as the comprehension barrier is removed.
+
+Validation, however is a more subtle tool:
+if a user’s personal dataset can be made sufficiently questionable as to be useless on its own,
+then locus of control shifts to the user choosing to validate parts of the dataset,
+which can be performed in a more nuanced,
 contextualised manner. If a user is the final arbiter of trust, they can decide
 to i) sign parts of their record, so that it is verified public fact; ii)
 co-sign it with another entity, so either can verify it but not anyone else;
@@ -402,7 +404,10 @@ may be times when they with to verify that they were at a particular location.
 \end{quote}
 The service is hence \emph{semi-trusted}: there are some benefits which the user
 wishes to accrue, but there are aspects of the service which makes the user
-unwilling to entrust their complete life history to it.
+unwilling to entrust their complete life history to it. We have chosen location
+as a clearly understandable facet of personal data, and one which can be easily
+used to re-identify individuals from anonymised
+datasets\cite{montjoye2013Unique}.
 
 \fig{Mediation}{Models of interaction with semitrusted services. a) Direct
 transmission of information; b) computationally mediated transmission, where a
@@ -475,12 +480,12 @@ In some cases, it may be possible to introduce systematic deviations into the
 digital record. In order to this, the user needs to be able to define which
 points to alter, and what to replace them with. One possibility would be
 thematic replacement---``hide the times I went to the pub by saying I
-was at a cafe''. It is likely that this will require some form of computational
-support to i) identify targets for replacement as they occur and ii) find
-suitable replacements. Using this technique, some, but not all of the true data
-is stored; however derived information---such as beverage preferences in the
+was at a cafe''. Another would be to disguise the user's home and work
+locations---places where they are less likely to require location based
+searches, but which make it very easy to re-identify them from anonymised data.
+It is likely that this will require some form of computational support to i) identify targets for replacement as they occur and ii) find suitable replacements. Using this technique, some, but not all of the true data is stored; however derived information---such as beverage preferences in the
 example above---can be wildly and purposefully distorted. The nature and fact of
-the distortions may be hard to uncover, as no simulatneous traces or
+the distortions may be hard to uncover, as no simultaneous traces or
 strange movement patterns are produced. Depending on the domain, subtle
 alterations may have large effects.
 \todo{examples?}
