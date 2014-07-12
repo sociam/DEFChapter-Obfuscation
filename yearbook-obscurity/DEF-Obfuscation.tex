@@ -659,22 +659,59 @@ support lie maintenance (e.g. friends of the person being lied to)
 real data, plus \emph{chaff} to a location aware service. A third party then
 requests verification of some of the points, which the user provides}
 
-Previously, we said verification is better. Why is this?
+In the introduction we suggested that verification is a more nuanced mechanism
+than control over sharing, since sharing is impossible to control
+technologically. One of the effects of the obfuscation strategies discussed
+previously is that it becomes impossible to know which parts of the user's
+data-stream are grounded in reality, and represent ``true'' values. This means
+that if someone wishes to engage with the data and have an expectation of
+accuracy, they need to ascertain which parts of the record are correct. This
+shifts the locus of control from the process of sharing to the process of
+verification---the user can make claims about subsets of the datapoints
+currently attributed to them.
 
+Let us consider a scenario where Ally has some personal data, which Brett would
+like to make use of. Brett also wants to sell Ally's data to Charlie.
+
+There are a range of statements which Ally can make, 
+including:
+``this subset of datapoints is mine'',
+``these points are within 50m of my true location'',
+``these points are representative of my general behaviour'' and so on. 
+The choice of which point to claim can be negotiated
+in the context of the question being asked, and Ally can determine what is
+and is not acceptable.
+
+If the external agency wishes to disseminate the users data, it becomes an issue
+of propagating the trust which the user has given them---essentially, Brett must
+say to Charlie: ``Ally has verified these points to me, and now I am
+verifying them to you''. The manner in which the initial verification was carried out now becomes
+critical:
 \begin{itemize}
-  \item Lets assume that we've made our public data completely unreliable so noone can
-use it.
-\item If someone wants to engage with it, they have to talk to us
-\item we can claim a subset of the data - just what they say they need for the
-purpose at hand
-\item We then have a choice of how to respond:
-\item No signing: if we simply send them a message saying ``these
-points belong to me'', then they can use the data, but would not be able to
-convince third parties of its validity.
-\item sign with our private key; now, anyone can check that we have claimed that set of datapoints
-\item sign with our private key and their public key: they can't prove the data
-is ours without revealing their identity.
+  \item if an email or similar communication is used, Ally simply declares
+  ``these points are mine'', then the secondary verification is only as strong as
+  trust in the communication chain---Brett must convince Charlie that the email
+  or message is genuine and emails are easy to fake;
+  \item Ally could use a technique which would give Brett no future tangible
+  proof of the verification---for example, a single use URL which
+  lists IDs for the correct points. Brett would have no evidence with which to
+  convince Charlie that Ally had verified the points, other than reputation
+  alone.
+  \item Ally can cryptographicaly sign the claim using public key cryptography.
+  The claim is then essentially public knowledge, and anyone can check Ally's verification.
+  \item Ally can sign the claim after Brett has; this means that Brett cannot
+  hide the fact that they were the recipient of the claim, so it is impossible
+  to propagate the claim anonymously.
 \end{itemize}
+
+All of these techniques relate to making the public record so unreliable that
+anyone who wants to use any of the data will need to separately establish a
+chain of provenance for certain parts of it. A related goal would be to make it
+illegal, or at least unacceptable, to use personal data without having a valid
+provenance chain for it. Essentially, in order to use anyone's data, Charlie
+would have to explain how they came to have it, and be able to prove that Ally
+had shared the data originally.
+
 
 \subsubsection{Notarization}
 \fig{Notarization}{Notarization of personal data. a) Datapoints and times are
