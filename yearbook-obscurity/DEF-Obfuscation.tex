@@ -655,9 +655,11 @@ support lie maintenance (e.g. friends of the person being lied to)
 
 \subsection{Verification and provenance mechanisms}
 
-\fig{Verification}{Example verification scenario. The user provides a set of
-real data, plus \emph{chaff} to a location aware service. A third party then
-requests verification of some of the points, which the user provides}
+\fig{Verification}{Example verification scenario. The user (Ally) provides a set
+of real data, plus \emph{chaff} to a location aware service. A third party
+(Brett) then requests verification of some of the points, which Ally
+provides. Brett then wishes to share the data with Charlie, which requires Brett
+to verify to Charlie that the data are correct.}
 
 In the introduction we suggested that verification is a more nuanced mechanism
 than control over sharing, since sharing is impossible to control
@@ -720,10 +722,16 @@ that i) the given data was supplied and ii) when it was supplied. Hashes are
 used so that the data is not publicly shared. b) If the hash of the previous
 submission is included, then sequences of consecutive points can be verified.}
 
-Third party digital notarization services can be employed\footnote{e.g.
+The verification examples above rely on Brett trusting Ally about which
+datapoints are correct. There may be times---e.g. when creating alibis---when
+Ally needs to have a stronger form of proof.
+
+In this case, third party digital notarization services can be
+employed\footnote{e.g.
 \url{http://virtual-notary.org/}, a free service hosted at Cornell University}.
 These services take in some document or datum, and provide a certificate which
-can be used to verify that that piece of data was provided at a certain time. For example, if someone wants to make a prediction
+can be used to verify that that piece of data was provided at a certain time. 
+For example, if someone wants to make a prediction
 for the outcome of a football match, they could notarize that before the match,
 and then subsequently prove that they had made the prediction beforehand. It is
 generally not possible to prove that they only made a single prediction,
