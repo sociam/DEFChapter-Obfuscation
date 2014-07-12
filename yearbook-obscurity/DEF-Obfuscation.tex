@@ -42,7 +42,7 @@
 %
 %\pretitle{}
 \title{Social Palimpsests - clouding the lens of the personal panopticon}
-\runningtitle{\ldots or ``Suck my tailpipe'' - how I learned to stop worrying
+\subtitle{\ldots or ``Suck my tailpipe'' - how I learned to stop worrying
 and toxify my exhaust data}
 %\subtitle{}
 
@@ -75,6 +75,37 @@ Obfuscation; Data politics; Personal Data Stores; Social Machines; Pants-on-fire
 %%%%%%%%%%% The article body starts:
 
 \section*{Introduction}
+
+%% maxxie wrote some stuff here
+
+Privacy advocates have been accused of advocating methods to enable criminals,
+stalkers, harassers \cite{}, miscreants, and even terrorists \cite{} to more
+easily conduct their misdeeds against society. The ``I have nothing to hide;
+therefore I should not care'' argument \cite{} used often in defense of ignoring
+privacy in the early days of targeted advertising and the Web still re-surfaces
+today. But as theoretical arguments of what \emph{may} become have been replaced
+by tangible examples of what has actually has, this, among other arguments have
+become thoroughly dismantled.  The sophisticated methods being used to track and
+pinpoint details of individuals has not been met with a corresponding increase
+in counter-tracking and counter-surveillance tools; as a result, people are
+being subject to an unprecedented barrage of targeted attempts to behaviourally
+manipulate them - often in ways too subtle for them to perceive (e.g.
+\cite{facebookstudy}).           
+
+Thus, this paper takes the position that privacy protection not merely as a
+concern for a minority with peculiar sensititivities towards being seen or
+exposed, but instead, as a set of capabilities necessary for preserving
+individual autonomy and well-being, in an economy where personal data has become
+the most precious digital commodity.       
+
+In this paper, we discuss and analyse methods of privacy protection that advance
+beyond the current state of anonymisation tools that merely obscure the tracks
+of individuals towards those that employ methods borrowed from
+information warfare \cite{}, in order to allow individuals to regain autonomy
+from unsolicited tracking and behavioural control.  We first discuss X and Y, followed by a a
+survey of lying and falsification in context-aware systems, current
+anonymisation ad privacy tools. This is followed by a complete overview of
+strategies         
 
 \subsection*{The rise of personal data and services reliant on it, and relation
 so surveillance}
@@ -147,24 +178,60 @@ information and communicate.
 
 Sharing data, by definition, is the entrusting of other parties with
 information; this necessarily involves relinquishing control over how it is
-subsequently handled and disseminated. However, data is persistent, while people
-and contexts change. A government may decide to share previously confidential
-data, as in the case of the recent care.data fiasco in the UK; a company can be
-bought and its assets acquired–the purchase of Moves by Facebook raised issues
+subsequently handled and disseminated. 
+\todo{eMax: Do we want to mention DRM here as a futile attempt to control how data is used once it's shared?}
+ \todo{There is so much more we can say right here about this.}  
+
+There are many issues with sharing data, here we higlight four of them:
+\begin{description}
+  \item[Sharing is persistent, while situations evolve;] once data is shared,
+  there is no technical means to revoke it. However, the context around its sharing and the
+  organisations involved are subject to change. 
+  A government may decide to share previously confidential data, as in the case of the recent \emph{care.data} fiasco in the UK; a company can be
+bought and its assets acquired---the purchase of Moves by Facebook raised issues
 around the terms and conditions of data handling companies; and even without
 malice accidents can expose vast swathes of personal data, or court proceedings
 may force private communications to become public - the Enron emails still
-represent the largest publicly available corpus of private emails.  
+represent the largest publicly available corpus of private emails. Essentially,
+once data is shared, the sharer has no control over what happens to it.
 
-Brad Templeton: ``Beware of time travelling robots from the future'' or ``Would
+ \todo{What you are sort of getting at as ``rights'' to data and the lack of
+regulation thereof; there is no notion of data ownership in any legisltative
+form, nor is there a notion of course of maintenance and tansfer of such terms
+of ownership - except in the most select of contextx, people have no legal
+``right to even their own data''}
+\item[Technology improves:] what is safe to share now may not be in the
+future. Brad Templeton from the Electronic Freedom Foundation uses the analogy
+of ``Time travelling robots from the future'': the information collected now
+will be subjected to increasingly sophisticated analysis techniques as time
+progresses, so the implications of sharing that information can be far beyond
+expectations. For example, in the future, it may be possible to carry out facial
+recognition on massive quantities of CCTV footage, and reconstruct the movements
+of a large proportion of citizens. This corresponds to the surveillance
+robots coming back in time and monitoring us now. In a similar vein: ``Would
 you have liked to be gay 40 years ago in a monitored society? Or an enemy of J.
-Edgar Hoover with modern tools in his hands?'' \cite{templetonWatched}
-Future tools will enable greater extraction and analysis of data after the fact;
+Edgar Hoover with modern tools in his hands?'' \cite{templetonWatched}. Sharing
+data today cedes control to the entities of tomorrow, with their greatly
+enhanced capabilities.
+\item[De-identification doesn't work:] data is often shared subject to the
+condition that it will only be shared in an \emph{anonymised} or
+\emph{de-identified} form. As a highly public example, Netflix challenged the
+public to create a better recommendation engine, based on a corpus of anonymised
+viewing histories. Subsequently, it was shown that many records within the
+database could be identified by comparison with publicly available
+sources \cite{narayanan2008Deanon}, let alone access to other, non-public data.
+Narayanan and Felten's recent report \cite{narayanan2014Deidentification} explains in a non-technical manner why
+de-idenfication of data remains problematic.
+\item[Databases can be joined:] as more databases of personal information
+become available, whether publicly or privately, the possiblity to match, join,
+correlate and shara data increases, and the effects of single points expand well
+beyond the environment in which they were created or shared. In short, data are
+held in \emph{leaky containers}: ``data move freely between different sectors of
+society with the result that information from discrete contexts, e.g.,
+ private life, work life and shopping, are being mixed rather than contained 
+ separately.''\cite[p.37--44]{lyon2001surveillance}.
+\end{description}
 
-David Lyon: leaky containers ``data move freely between different sectors of
-society with the result that information from discrete contexts, e.g., private
-life, work life and shopping, are being mixed rather than contained
-separately.''
 
 \subsection*{The case for lying and the importance of anonymity}
 
@@ -209,24 +276,6 @@ fabric is more obvious than weaknesses in a single thread.
 
 
 
-\subsection{Personal Data Stores - allies on the intimacy battleground}
-
-Personal data stores (PDS) represent a partial solution to issue of
-presentation: having trusted, user controlled repositories for data enables a
-more user-centric approach to management of capta---those data which we choose
-to take and preserve. Bridges can then be built between personal data stores and
-the rest of the world in order to support the connected, networked interactions
-which users now expect. If these bridges simply share the data, even in a
-controlled manner, nothing has been gained; hence the bridges become conduits
-for manipulating truth and constructing falsehoods. As personal data stores
-accumulate more real-time contextual data about the individual, as well as about
-the individual’s social connections, PDSes can provide support for the often
-stressful and mentally burdensome task of lie maintenance, for example: i)
-identifying when a person's real activities or whereabouts contradict a lie, and
-might be discovered; ii) identifying indirect social channels that could expose
-a lie (e.g. through friends of friends); iii) suggesting appropriate lies to use
-which are least likely to be detected; iv) suggesting individuals to lie to to
-support lie maintenance (e.g. friends of the person being lied to)
 
 \subsection{Why verification and provenance are better than sharing}
 
@@ -256,12 +305,24 @@ time.
 \section{Review of current approaches and tools} 
 \todo{Max to do some writing}
 
+
+
 \begin{itemize}
   \item The revolution has started!
-  \item TOR, anonymous remailers, burner phones, gotta change up, yo!
-  \item Obfuscation symposium: \url{http://obfuscationsymposium.org/}
+  \item tor, anonymous remailers, burner phones, gotta change up, yo!
+  \item HTTPSEverywhere
   \item Surveillance and Society: \url{http://library.queensu.ca/ojs/index.php/surveillance-and-society}
+  \item CVDazzle
+  \item Heat-signature cloaking burqas, hoodies
+  \item Bluetooth and MAC randomisation in iOS 8
+  \item Silent Circle, Cryptocat
+  \item DNT in IE10
+  \item Adblock/Adblock Plus, Privacy Badger, Disconnect.Me
+  \item HTTPsEverywhere
+  \item VPNs 
 \end{itemize}
+
+Open source and trustworthiness
 
 Theory of obfuscation:
 Types of disinformation \cite{alexander2010Disinformation}:
@@ -292,7 +353,8 @@ Some existing stuff and the things we can link it to later
 
 
 \section{A selection of obfuscation strategies}
-\todo{Laura to write descriptions and try redoing with maps}
+\label{sec:strategies}
+
 Alexander's taxonomy \cite{alexander2010Disinformation} discusses several types
 of disinformation which relate to modifying single messages. In contrast, due to
 the pervasiveness of modern communications, we are concerned with modifying
@@ -300,6 +362,19 @@ message \emph{streams}, where a trace of multiple values must be considered.
 Additionally, there is the possibility of interaction with others, whether it is
 collusion to strengthen obfuscatory practices, or the addition---purposeful or
 otherwise---of information which exposes the obfuscation.
+
+In this section, we present a range of obfuscation strategies, some of which are
+speculative, but many of which are drawn from existing examples both inside and
+oustisde the digital sphere.
+
+For each strategy we discuss: \begin{inparaenum}[\itshape i\upshape)]
+\item what kind of alteration of baseline data is performed;
+\item what the motivation and possible use cases are;
+\item how some form of computational support aids in the deception;
+\item how the strategy can be applied to other data
+\item the systems (if any) which do this currently.
+\end{inparaenum}
+
 
 It is problematic to consider the obfuscatory tactics here without a sense of
 the scenario in which they are to be deployed. Our scenario in this paper is:
@@ -323,25 +398,22 @@ user submitting their data directly to the service; for our obfuscatory
 techniques, we would like to enlist computational support (Figure
 \ref{fig:Mediation}b). This typified, but not limited to mediation from a PDS
 which acts on behalf of the user to modify the data which they provide.
+In Figures \ref{fig:SinglePlayerObfuscation} and
+\ref{fig:MultiPlayerObfuscation}, we plot a fictitious one-dimensional
+``location" measurement against time in order to give a sense of how
+obfuscations unfold across time in multiple locations\footnote{While a two
+dimensional, map-based representation would be more immediate, it is difficult
+to clearly show temporal aspects.}. We show the individual's true `location' as
+a continuous line, along with the measurements made by their device; we then
+overlay the points which would be submitted on their behalf after obfuscation.
 
 \subsection{Strategies for the lone obfuscator}
 
 \fig[1.05]{SinglePlayerObfuscation}{Obfuscation strategies for the lone agent}
 
-Figure \ref{fig:SinglePlayerObfuscation} lists a collection of possible
-obfuscation strategies. In all cases, a fictitious one-dimensional ``location"
-measurement is plotted against time, to give a sense of how an
-individual's position in space changes. Figure
-\ref{fig:SinglePlayerObfuscation}a is the true baseline, with a 
-curve indicating the continuous true position, and the dots
-representing reports of this position to the location-aware service. For each
-strategy we discuss: \begin{inparaenum}[\itshape i\upshape)]
-\item what kind of alteration of baseline data is performed;
-\item what the motivation and possible use cases are;
-\item how some form of computational support aids in the deception;
-\item how the strategy can be applied to other data
-\item some of the systems which do this currently.
-\end{inparaenum}
+Figure \ref{fig:SinglePlayerObfuscation} gives a collection of possible
+obfuscation strategies which can be carried out by a single person with some
+level of computational support.
 
 \subsubsection{Chaff}
 
@@ -447,7 +519,11 @@ strategies, where collusion can aid in the creation of otherwise unachievable
 datastreams, or increase the veracity of artificially created data. Generally
 the possibilities in computational systems are analagous to pre-computational
 possibilities; computational support tends to be in the form of coordination to
-find collaborators or and check coherence of data points.
+find collaborators or and check coherence of data points. The ideas outlined
+here are more speculative, as few computational systems of this type exist.
+There are aspects which make these strategies harder to pull off - coherence is
+then required across multiple different accounts; however the counterpoint is
+that if successful, the obfuscation is better supported and harder to spot.
 
 \subsubsection{Artificial co-location}
 One way to obtain a realistic but untrue location trace is to re-present the
@@ -459,31 +535,103 @@ which match the desired story---as well as the technical business of
 transferring location devices between accounts.
 
 \subsubsection{Supporting Evidence}
-\begin{itemize}
-  \item We ask our friends for supporting evidence of our lie; could be like
-  co-location, could be broader
-\end{itemize}
+
+\todo{Maybe merge into preceding co-location section}
+Co-located people often share the fact of their co-location, explicitly or
+implicitly, whether in group photos---``Here's me and X on top of the Scott
+monument''; broadcast messages---``Just been hanging out with X at the coffee
+shop''; or shared plans---``Going to the movies with X tonight - anyone want to
+join in?''. Enlisting collaborators to make these kinds of posts can help to add depth to a
+constructed trace, weaving it more tightly into the social fabric.
 
 \subsubsection{Account Sharing}
-In a similar manner to the swapping of loyalty cards discussed in
-\cite{brunton2011vernacular}, users of services can share accounts.
-\begin{itemize}
-  \item A group of people share accounts, with some way to decide which is
-  used, e.g. accounts covering geographic areas
-  \item Like swapping supermarket discount cards
-  \item CompSupp: which account, when? discovery and sharing etc.
-\end{itemize}
 
+In a similar manner to the swapping of loyalty cards discussed in
+\cite{brunton2011vernacular}, users of services can share accounts. This
+results in an account or set of accounts with more or less plausible activity,
+yet allows the users to remain unidentified. 
+Much as the loyalty card swapper confounded efforts to inspect individual
+buying habits, or the ``Anonymous'' movement aggregates the activities of a
+multitude of participants behind a stylised mask, services such as DuckDuckGo
+aggregate many people's search results, ensuring that the search providers
+cannot build up any identifiable user histories. 
+
+Computational intelligence can be enlisted to support many different ways of assigning people to accounts,
+ such as:
+\begin{description}
+  \item[\emph{Many to one}] schemes have a single account controlled by
+  multiple people. This can result in a completely incoherent manner;
+  DuckDuckGo's aggregated search makes no attempt to imitate
+  individual behaviour. 
+  Alternatively, sharing can be tied into a coherent shared identity,
+   where multiple people contribute to a single shared persona\cite{dalton2013Pseudonymity}. 
+   Here there is a challenge to maintain consistency: when multiple people
+   control a call centre's chat avatar, they must ensure that the relevant
+   information and state is shared [\emph{ibid.}]. When multiple users control a
+   single game character, the gameworld enforces consistency, and the community
+   must produce coherent action streams in order to progress \todo{cite
+   Twitch!}.
+   \item[\emph{Randomised}] schemes allocate accounts to people without a
+   guiding principle; when loyalty cards are mailed between anonymous
+   participants, there is an explicit desire to produce implausible data in
+   order to confound analysis. Online accounts can be similarly shared, leading
+   to traces which are unlikely to have been produced by a single individual.
+   In our locative service example, this allows users to access benefits which
+   do not rely on individual history, while preserving some level of privacy.
+   Computational support involves finding accounts to share, and ensuring that
+   each account is only accessed by a single person at any given time.
+   \item[\emph{Structured}] schemes allow for accounts to be used as appropriate
+   according to some criterion. If a location service offers history based
+   benefits (e.g. loyalty rewards or reputation) then it could be beneficial to
+   borrow a local user's account when going on holiday---Couchsurfing but with
+   login credentials instead of flats. Infrastructure would be required to
+   discover appropriate accounts, and mediate access. \todo{More explanation? Link to powerlevelling
+   in WoW?}
+\end{description}
 
 \section{Operationalisation - managing deception and its side effects}
 
 \subsection{Going beyond location}
+
+In Section \ref{sec:strategies}, we discussed obfuscatory possibilities with
+respect to a location based service; however, this is a single application area,
+and the need for regaining informational autonomy is felt across spectrum of
+datatypes and services, hence we must discuss how these techniques generalise. 
+
+Location data is generally collected by a device which the user owns. In many
+cases, this is a smartphone, which uses a combination of GPS, cell tower
+triangulation and WiFi access point locations to determine a user's position in
+space. The user then has some level of choice about who to share the data with
+and how. This is not always the case, however: cell tower records can identify
+user's locations---and individuals can be picked out from very sparse histories
+\todo{cite Nature article on cell location identification}.
+
 
 \subsection{PDSs to support obfusction}
 \begin{itemize}
   \item create continuity
   \item act on your behalf
 \end{itemize}
+
+\subsection{Personal Data Stores - allies on the intimacy battleground}
+
+Personal data stores (PDS) represent a partial solution to issue of
+presentation: having trusted, user controlled repositories for data enables a
+more user-centric approach to management of capta---those data which we choose
+to take and preserve. Bridges can then be built between personal data stores and
+the rest of the world in order to support the connected, networked interactions
+which users now expect. If these bridges simply share the data, even in a
+controlled manner, nothing has been gained; hence the bridges become conduits
+for manipulating truth and constructing falsehoods. As personal data stores
+accumulate more real-time contextual data about the individual, as well as about
+the individual’s social connections, PDSes can provide support for the often
+stressful and mentally burdensome task of lie maintenance, for example: i)
+identifying when a person's real activities or whereabouts contradict a lie, and
+might be discovered; ii) identifying indirect social channels that could expose
+a lie (e.g. through friends of friends); iii) suggesting appropriate lies to use
+which are least likely to be detected; iv) suggesting individuals to lie to to
+support lie maintenance (e.g. friends of the person being lied to)
+
 
 \subsection{Verification and provenance mechanisms}
 
