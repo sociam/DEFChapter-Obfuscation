@@ -639,7 +639,8 @@ Computational intelligence can be enlisted to support many different ways of ass
    Computational support involves finding accounts to share, and ensuring that
    each account is only accessed by a single person at any given time.
    \item[\emph{Structured}] schemes allow for accounts to be used as appropriate
-   according to some criterion. If a location service offers history based
+   according to some criterion. If a locaFor this to work tion service offers 
+history based
    benefits (e.g. loyalty rewards or reputation) then it could be beneficial to
    borrow a local user's account when going on holiday---Couchsurfing but with
    login credentials instead of flats. Infrastructure would be required to
@@ -692,20 +693,47 @@ collection taking place, we can use the same strategies as described in the
 previous section, with some adaptations. 
 
 For a photo sharing application or microblogging tool, adding \emph{chaff} 
-means posting more content, but fabricated. It can be realised by 
-posting public domain photos on Instagram from a randomly chosen topic, or 
-flooding Twitter with randomy generated text, older posts, or fragments from 
-existing texts like web pages or books. For browsing history in an online shop, 
-we can simulate browsing of various items by randomly requesting a variable 
-number of pages beside the page we are interested in. While it does not hide the 
-fact that we visited the shop, but it can obfuscate our interest. This can be 
-useful when dealing with Amazon, or another large scale marketplace, but it can 
-be less useful when the online shop is catering for a small niche market. 
+means posting more content, but fabricated \todo{the q is do we want to?}. It 
+can be realised by posting public domain photos on Instagram from a randomly 
+chosen topic, or flooding Twitter with randomy generated text, older posts, or 
+fragments from existing texts like web pages or books. For browsing history in 
+an online shop, we can simulate browsing of various items by randomly requesting 
+a variable number of pages beside the page we are interested in. While it does 
+not hide the fact that we visited the shop, but it can obfuscate our interest. 
+This can be useful when dealing with Amazon, or another large scale marketplace, 
+but it can be less useful when the online shop is catering for a small niche 
+market. 
 The goal of chaff is not to be believable on deeper inspection, or even 
 consistent, so the algorithms for choosing what to post and where to browse 
 need not be too complex. 
 
-Noise injection 
+Applying \emph{noise injection} or \emph{coarsened granularity} strategies can 
+limit the benefit of the service, and in some cases defeat the purpose of 
+using it altogether - like injecting noise in the images posted on Instagram.
+% In an online shop, can make use of features like ``similar items'' to get 
+% information about the actual thing we want to know, but it is tricky and would 
+% not work everywhere. 
+With money expenditure we can pay in cash at some shops and with the card at 
+others, and change the pattern randomly. And we can change granularity by 
+taking out cash only once for several shopping trips. Gift cards 
+and prepaid vouchers bought with cash 
+\footnote{As did this woman trying to hide her pregnancy ``from the Internet 
+and marketing companies'': My Experiment Opting Out of Big Data Made Me Look 
+Like a Criminal \url{http://time.com/83200/privacy-intExamples of this 
+inernet-big-data-opt-out/}} can be used for online shopping as well as on the 
+high street. Simultaneously using a loyalty card can revert the obfuscating 
+effects of such measures. 
+These strategies can however be used successfully with optional data that 
+is required by some services but do not impact on the service provided. 
+Randomly changing your date of birth or hometown, or even your name in Facebook 
+will still allow you to use the service to connect with friends. Any 
+functionality of a service that is regarded of low importance can be used as a 
+place where noise can be injected, or where the granularity can be coarsened. 
+This of course leaves part of the information unobfuscated. 
+% example of thsi is the way Peter uses google services under a diff 
+% name Ambrose P.
+
+
 
 
 \subsection{PDSs to support obfusction}
