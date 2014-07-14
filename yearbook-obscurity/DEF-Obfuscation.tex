@@ -92,27 +92,43 @@ being subject to an unprecedented barrage of targeted attempts to behaviourally
 manipulate them - often in ways too subtle for them to perceive (e.g.
 \cite{facebookstudy}).           
 
-Thus, this paper takes the position that privacy protection not merely as a
-concern for a minority with peculiar sensititivities towards being seen or
+Thus, this chapter takes the position that privacy protection not merely as a
+concern for a minority with peculiar sensitivities towards being seen or
 exposed, but instead, as a set of capabilities necessary for preserving
 individual autonomy and well-being, in an economy where personal data has become
-the most precious digital commodity.       
+the most precious digital commodity. 
 
+Bentham's thought experiment of the Panopticon, developed by Foucault describes
+a prison in which inmates lives are constantly surveilled as a means of
+discipline and exertion of control.
+In the world of technologically driven data collection which we inhabit,
+this has effects both
+on people's behaviour as they internalise the fact that they are surveilled, and
+on the way in which they are treated, and \emph{socially sorted} by the gears of
+our algorithmic society\cite{simon2005Panopticism}.
+
+We are interested in practises which can cloud the lenses of the observers, to
+choose how we are seen, and to help regain some control of
+the manner in which our lives are surveilled, both socially and otherwise:
 \begin{quote}``We give up on privacy because we live in the Panopticon. A lot of
 people think there is an inevitability about this [loss of privacy]. But the
-availability of data does not sanction its use.'' Nigel Shadbolt,
+availability of data does not sanction its use.'' Sir Nigel Shadbolt,
 quoted in the Wall Street Journal\cite{rooney2012OpenData}\end{quote}
 
-In this paper, we discuss and analyse methods of privacy protection that advance
-beyond the current state of anonymisation tools that merely obscure the tracks
+In this chapter, we discuss and analyse methods of privacy protection that
+advance beyond the current state of anonymisation tools that merely obscure the tracks
 of individuals towards those that employ methods borrowed from
 information warfare \cite{}, in order to allow individuals to regain autonomy
-from unsolicited tracking and behavioural control.  We first discuss X and Y, followed by a a
+from unsolicited tracking and behavioural control.  We first discuss X and Y, followed by a
 survey of lying and falsification in context-aware systems, current
-anonymisation ad privacy tools. This is followed by a complete overview of
-strategies         
+anonymisation ad privacy tools. This is followed by an overview of
+strategies for obfuscation, some of which are currently implemented in either
+mainstream tools or proof of concept studies,  and some of which are
+speculative, future possibilities.
 
-\subsection*{The rise of personal data and services reliant on it, and relation
+\section{Background}
+
+\subsection{The rise of personal data and services reliant on it, and relation
 so surveillance}
 
 As we pass through the digitally augmented world that we collectively inhabit,
@@ -130,44 +146,44 @@ indicators of intent. As such, the modes of collection of this information can
 range from explicit, user initiated submission of data, through consensual
 background recording to invisible, asymmetric electronic surveillance.
 
-The pervasiveness of computationally mediated interaction means that for much of
-this data ``refusal is not a practical option, as data collection is an
-inherent condition of many essential societal
-transactions''\cite{brunton2011vernacular}. This leads us to introduce the term \emph{fiat data}---when an
-organisation uses its position to demand (by fiat) the disclosure of certain
-information in return for use of its services. The term comes from a loose
-analogy with \emph{fiat money}: currencies whose value is derived from the
-mandate of a government. 
-\todo{this is gibberish, needs rewriting!}
-Fiat money is, by definition
-\emph{inconvertible}, and \emph{intrisically useless}, and hence must derive
-its value from external forces, typically government decree, status as legal
-tender or by being the required currency of taxation. While the conditions of
-inconvertibility and uselessness are not necessarily applicable to personal
-data, the mechanism of central authority decree is commonplace; if one wants to
-interact socially on Facebook, one must pay the tax in personal data which they
-demand. This can be contrasted with modern cryptocurrencies such as Bitcoin;
-here, there is no central authority to backstop value and demand taxation.
-Rather, the participants in the economy collectively decide what the units
-of currency are worth; this would be a personal data economy in which
-participants decided what and how they wanted to share.
-
 Increasingly, in order to utilise services, we must provide our data to third
 parties. This ranges from mobile phone numbers being required for Yahoo
 accounts, to location data being shared with Foursquare or Grindr, to the NHS
 adding personal health information to centralised databases. 
+The pervasiveness of computationally mediated action and interaction in modern
+life means that for much of this data ``refusal is not a practical option, as
+data collection is an inherent condition of many essential societal
+transactions''\cite{brunton2011vernacular}. 
 
+This leads us to introduce the term 
+\emph{fiat data}---when an
+organisation uses its position to demand (by fiat) the disclosure of certain
+information in return for use of its services. The term comes from a loose
+analogy with \emph{fiat money}: currencies whose value is derived from the
+mandate of a government\footnote{Fiat money is, by definition
+\emph{inconvertible}, and \emph{intrisically useless}, and hence must derive
+its value from external forces, typically government decree, status as legal
+tender or by being the required currency of taxation. While the conditions of
+inconvertibility and uselessness are not necessarily applicable to personal
+data, the mechanism of central authority decree is a common defining factor}. 
+Much as being a citizen of the United Kingdom requires paying taxes in pounds
+Sterling, if one wants to interact socially on Facebook, one must pay the
+personal data tax which they demand. 
 
-In some cases, this is a
-necessary requirement for the service to be worthwhile, but in many cases it
-represents an attempt by the organisation to create a monetizable product from
-its users. One reaction would be be to reject the services which require data;
-to \emph{opt-out}, but as Brunton and Nissenbaum put it: ``Refusal is not a
-practical option, as data collection is an inherent condition of many essential societal transactions''
-\cite{brunton2011vernacular}
+This use of authority to demand taxes in a fiat currency can be contrasted with modern
+cryptocurrencies such as Bitcoin; here, there is no central authority to 
+backstop value and demand taxation---rather, the participants in the economy collectively decide what the units
+of currency are worth. 
+The analagous approach to personal data would be a personal data economy in
+which participants decided what and how they wanted to share, where sharing was
+based on personal utility rather than centralised dictat.
 
-In addition to requiring or demanding personal data, many systems
-encourage users to supply their data. Gamification can be used to manipulate
+In some cases, the provision of personal data is
+necessary requirement for the provision of a service, but in many
+cases it represents an attempt by the organisation to create a monetizable product from
+its users. There is a spectrum of approaches from outright demands 
+to asking or encouraging users to furnish their data.
+Increasingly, \emph{gamification} is be used to manipulate
 users into self-surveillance, by providing rewards---whether within the system
 or through the promise of self-improvement---for activities which require the
 sharing of data to function:
@@ -184,15 +200,15 @@ Online social networking can also be empowering for the user, as the monitoring 
 registration facilitates new ways of constructing identity, meeting friends and colleagues 
 as well as socializing with strangers. This changes the role of the user from passive to 
 active, since surveillance in this context offers opportunities to take action, seek 
-information and communicate. 
-\end{quote} \cite{albrechtslund2008online}
+information and communicate.(Albrechtslund, \cite{albrechtslund2008online})
+\end{quote} 
 
 In summary, there are multitudinous situations where we are coerced, cajoled or
 manipulated into sharing our personal data, and the cost of avoiding such
 sharing is increasingly becoming untenable for large sections of the population
 of the industrialised world.
 
-\subsection*{Sharing is a loss of control}
+\subsection{Sharing is a loss of control}
 
 Sharing data, by definition, is the entrusting of other parties with
 information; this necessarily involves relinquishing control over how it is
@@ -253,7 +269,9 @@ form, nor is there a notion of course of maintenance and tansfer of such terms
 of ownership - except in the most select of contextx, people have no legal
 ``right to even their own data''}
 
-\subsection*{The case for lying and the importance of anonymity}
+\subsection{The case for lying and the importance of anonymity}
+
+\todo{Max/Laura?}
 
 White lies can aid in social network growth: \cite{iniguez2014Deception}
 
@@ -264,12 +282,13 @@ non-truths to manage the myriad conflicting social demands placed upon us.
 Butler Lies: \cite{hancock2009butler}
 
 Translucence: ``What we say and do with another person depends on who, and how
-many, are watching.'' - \cite{erickson2000Translucence}
+many, are watching.'' - \cite{erickson2000Translucence} \todo{This is important
+and should stay\ldots}
 
 Contrast with Transparent society \cite{brin1999transparent}; power imbalance
-between parties.
+between parties. \todo{Can ditch this if you want!}
 
-\subsection*{Multiple Identity}
+\subsection{Multiple Identity}
 
 
 A natural part of online life is the ability to tailor the persona we present to
@@ -279,7 +298,7 @@ and family or non-mainstream friend groups.
 \todo{Amy's Content creation on youtube \cite{guy2014ConstructedIdentity}}
 \todo{Ben Dalton's thesis about Persona's throughout the agents \cite{dalton2013Pseudonymity}}
 
-\subsection*{Why doing it socially is difficult}
+\subsection{Why doing it socially is difficult}
 
 Sharing certain personal data is a barrier to anonymity and obfuscation; 
 data which is rooted in physical fact provides multiple opportunities for
@@ -290,10 +309,6 @@ time, and become woven into the social fabric. The ability to compare
 multiple accounts of history---especially once the time travelling
 robots are involved---means that dissonance within the social
 fabric is more obvious than weaknesses in a single thread.
-
-
-
-
 
 
 \subsection{Why verification and provenance are better than sharing}
@@ -334,7 +349,6 @@ time.
   \item Reigeluth, data traces: \cite{reigeluth2014Data}
   \item Beer, algorithms and power: \cite{beer2009Algorithm}
   \item Goldberg, public/virtual participation: \cite{goldberg2010Rethinking}
-  \item Rauhofer, Future Proofing Privacy: \cite{rauhofer2012FutureProofing}
   \item Simon, panopticism \cite{simon2005Panopticism}
 \end{itemize}
 
@@ -396,11 +410,11 @@ The social aspect inherent to modern communication tools increases the
 possibility of exposure \todo{what's that word i'm looking for?? detection/
 uncover / disclosure/ reveal} of the lies. However, we can also use [the 
 socially expected] social interaction to our advantage, colluding to strengthen 
-the obfuscatory practices. yearbook-obscurity/DEF-Obfuscation.tex
+the obfuscatory practices. %yearbook-obscurity/DEF-Obfuscation.tex
 % Additionally, there is the possibility of interaction with others, whether it is
 % collusion to strengthen obfuscatory practices, or the addition---purposeful or
 % otherwise---of information which exposes the 
-obfuscation.yearbook-obscurity/DEF-Obfuscation.tex
+%obfuscation.yearbook-obscurity/DEF-Obfuscation.tex
 
 In this section, we present a range of obfuscation strategies, some of which are
 speculative, but many of which are drawn from existing examples both inside and
@@ -416,7 +430,7 @@ For each strategy we discuss: \begin{inparaenum}[\itshape i\upshape)]
 
 
 It is problematic to consider the obfuscatory tactics here without a sense of
-the scenario in which they are to be deployed. Our scenario in this paper is:
+the scenario in which they are to be deployed. Our scenario in this chapter is:
 \begin{quote}
 The user wishes to make use of services which expect location information; 
 the location information provided is shared publicly and is almost
@@ -662,8 +676,9 @@ cases, this is a smartphone, which uses a combination of GPS, cell tower
 triangulation and WiFi access point locations to determine a user's position in
 space. The user then has some level of choice about who to share the data with
 and how. This is not always the case, however: cell tower records can identify
-user's locations---and individuals can be picked out from very sparse histories
-\todo{cite Nature article on cell location identification}.
+user's locations---and individuals can be picked out from very sparse
+histories\cite{montjoye2013Unique}.
+
 
 Obfuscating data (location or otherwise) can be done [only] if the data is 
 known to be collected in the first place. Some knowledge about how the 
@@ -741,12 +756,6 @@ coarsened. This of course leaves part of the information unobfuscated.
 Changing the declared date of birth can be also \emph{systematic}, a user can 
 choose an untrue date which to reuse in \emph{all} services that require it.
 
-
-\subsection{PDSs to support obfusction}
-\begin{itemize}
-  \item create continuity
-  \item act on your behalf
-\end{itemize}
 
 \subsection{Personal Data Stores - allies on the intimacy battleground}
 
@@ -869,11 +878,11 @@ hashing the current location with the previous location, we can link the points
 together, to build up confidence in the notarized results (Figure
 \ref{fig:Notarization}b).
 
-\section{Conclusion}
-
+\subsection{Effects and ethics of obfuscation}
+\todo{HOw do services react when we stuff them full of noise?}
+\todo{Is it OK to do this stuff?}
+Ref: \cite{brunton2011vernacular}
 \begin{itemize}
-  \item Translation to things that aren't location data; generalisability; can't
-  add chaff to our bank accounts (or can we?)
   \item Viability - how do services react when we fill them full of noise?
   Plausible versions of these techniques
   \item Ethics - is this OK?
@@ -883,6 +892,23 @@ together, to build up confidence in the notarized results (Figure
   the data that goes into them; start rejecting points which represent causality
   violations.
 \end{itemize}
+
+\section{Conclusion}
+
+In this chapter, we have presented a particular approach to shifting the
+boundary between privacy and use of data. We have taken a purposefully
+adversarial approach to the protection of personal data as an indication of
+potential steps which can be taken by individuals at a grass-roots level. 
+These techniques are not the final word in personal data sharing, but sketch out
+a particular position in the journey towards a balanced societal attitude
+towards surveillance.
+In
+time we hope that stronger legal and social protections of personal data will be
+introduced, so that society can enjoy the benefits of data sharing while being
+respectful of individual's right to
+privacy\cite{rooney2012OpenData,rauhofer2012FutureProofing}. 
+
+
 
 %%%%%%%%%%% The bibliography starts:
 %\begin{thebibliography}{99}
