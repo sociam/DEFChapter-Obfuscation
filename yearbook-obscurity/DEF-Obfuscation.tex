@@ -253,7 +253,8 @@ as to be useless on its own, then locus of control shifts to the user choosing
 to validate parts of the dataset, which can be performed in a more nuanced,
 contextualised manner. If a user is the final arbiter of trust, they can decide
 to i) sign parts of their record, so that it is verified public fact; ii)
-co-sign it with another entity, so either can verify it but not anyone else;
+co-sign it with another entity, so either can  alsoverify it but not anyone 
+else;
 iii) verify it through an anonymous channel, so that the entity to whom they
 provide verification cannot propagate the claim further. This verification can
 be carried out entirely separately from the datastore itself, allowing for the
@@ -313,14 +314,19 @@ Some existing stuff and the things we can link it to later
 
 
 \section{A selection of obfuscation strategies}
-\todo{Laura to write descriptions and try redoing with maps}
 Alexander's taxonomy \cite{alexander2010Disinformation} discusses several types
 of disinformation which relate to modifying single messages. In contrast, due to
 the pervasiveness of modern communications, we are concerned with modifying
 message \emph{streams}, where a trace of multiple values must be considered.
-Additionally, there is the possibility of interaction with others, whether it is
-collusion to strengthen obfuscatory practices, or the addition---purposeful or
-otherwise---of information which exposes the obfuscation.
+The social aspect inherent to modern communication tools increases the 
+[possibility of] interaction with others, which in turn increases the 
+possibility of exposure \todo{what's that word i'm looking for?? detection/ 
+uncover / disclosure/ reveal} of the lies. However, we can also use [the 
+socially expected] social interaction to our advantage, colluding to strengthen 
+the obfuscatory practices. 
+% Additionally, there is the possibility of interaction with others, whether it is
+% collusion to strengthen obfuscatory practices, or the addition---purposeful or
+% otherwise---of information which exposes the obfuscation.
 
 It is problematic to consider the obfuscatory tactics here without a sense of
 the scenario in which they are to be deployed. Our scenario in this paper is:
@@ -329,7 +335,7 @@ The user wishes to make use of services which expect location information;
 the location information provided is shared publicly and is almost
 certainly stored indefinitely. At times, the user may want to draw on location
 based information---such as restaurant recommendations or directions---and there
-may be times when they with to verify that they were at a particular location.
+may be times when they wish to verify that they were at a particular location.
 \end{quote}
 The service is hence \emph{semi-trusted}: there are some benefits which the user
 wishes to accrue, but there are aspects of the service which makes the user
@@ -358,9 +364,11 @@ curve indicating the continuous true position, and the dots
 representing reports of this position to the location-aware service. For each
 strategy we discuss: \begin{inparaenum}[\itshape i\upshape)]
 \item what kind of alteration of baseline data is performed;
-\item what the motivation and possible use cases are;
+\item what the motivation and possible use cases are;\todo{I would split this 
+in 2 - motivation, then use cases}
 \item how some form of computational support aids in the deception;
-\item how the strategy can be applied to other data
+\item how the strategy can be applied to other data \todo{do we no do this in 
+the next section for all strategies?}
 \item some of the systems which do this currently.
 \end{inparaenum}
 
@@ -390,7 +398,10 @@ friends, without revealing which shops you were visiting. This is compatible
 with services which expect coherent location data, and may be indistinguishable
 from the inaccuracies of the location sensors. One downside is that the ``true''
 location traces are not present in the record of the service.
-\todo{examples?}
+% \todo{examples?}
+For example, TripAdvisor can still provide a good enough list of recommended 
+attractions around the given ``noisy'' location, however a navigation 
+application will not be able to provide reliable directions.
 
 \subsubsection{Coarsened Granularity (or Quantisation)}
 
