@@ -733,35 +733,40 @@ triangulation and WiFi access point locations to determine a user's position in
 space. The user then has some level of choice about who to share the data with
 and how. This is not always the case, however: cell tower records can identify
 user's locations---and individuals can be picked out from very sparse
-histories\cite{montjoye2013Unique}.
+histories\cite{montjoye2013Unique}. Smart phone manufacturers collected 
+location data from their users without their knowledge--which regardless of the 
+possible good intentions or technical reasons\footnote{\\Apple's response: 
+\url{http://www.apple.com/pr/library/2011/04/27Apple-Q-A-on-Location-Data.html 
+}} behind the logging, led to a public outcry when it was revealed in April 
+2011\footnote{\todo{pick one}\\Original: 
+\url{http://radar.oreilly.com/2011/04/apple-location-tracking.html},
+\\ArsTechnica: \url{ 
+http://arstechnica.com/apple/2011/04/how-apple-tracks-your-location-without-your 
+-consent-and-why-it-matters/}, \\Wired: 
+\url{http://www.wired.com/2011/04/apple-iphone-tracking/}, \\WSJ: \url{ 
+http://online.wsj.com/news/articles/SB10001424052748703983704576277101723453610} 
+}
 
+Obfuscating data (location or otherwise) can be done only if the data is 
+known to be collected in the first place. Some knowledge about the data 
+collection process--what data is captured, when--helps improve the obfuscation. 
 
-Obfuscating data (location or otherwise) can be done [only] if the data is 
-known to be collected in the first place. Some knowledge about how the 
-data collection is done -- what data is captured, when -- also helps improve 
-the obfuscation. 
-\todo{PDS can manage this by being a gatekeeper that only sends data requested 
-by a service - would mean the pds knows what is requested at all times}
+Some data, even when known to be collected, cannot be obfuscated. Examples 
+include all official data like census data, police reports, tax returns, health 
+records, but also private organizations with a regulated status like banks and 
+utility providers. Obfuscating this types of data in any way can be considered 
+a criminal offence. 
+For example ``obfuscating'' one's income source by adding chaff or noise can be 
+considered tax evasion, theft, money laundering, etc.
+% ; obfuscating energy consumption data can lead to suspicion of growing marijuana 
+% (in some places), or running illegal servers (in other places). 
+% \todo{do we want to go further?} Even weirder, obfuscating family membership :) 
+% false number of children / parents / supported or supporting family members. 
 
-For some types of data and services might not allow the user to choose how 
-much (if any) is captured and disclosed, nor do they allow the generation or 
-modification of the data. Some examples include all official data 
-collection [???] like census data, police reports, tax returns, health records, 
-but also private organizations with a semi-official / regulated status 
-\todo{is this even a word?} like banks and utility providers. The ``official'' 
-status of this types of personal data means that altering it in any way, for 
-ofuscation purposes, might be considered a criminal offence. For example 
-obfuscating one's income source by adding chaff can be considered tax evasion, 
-theft, money laundering, etc; obfuscating energy consumption data can lead to 
-suspicion of growing marijuana or cooking meth (in some places), or running 
-illegal servers (in other places). \todo{do we want to go further?} Even 
-weirder, obfuscating family membership :) false number of children / parents / 
-supported or supporting family members. 
-
-For the data that can be ``legally'' obfuscated -- that is, without legal 
-consequences to the obfuscator, and for which we are aware of the data 
-collection taking place, we can use the same strategies as described in the 
-previous section, with some adaptations. 
+For data that can be obfuscated without legal consequences, and for 
+which we are aware of the data collection, we can use the same 
+strategies as described in Section \ref{sec:strategies}, with adaptations 
+depending on the data type. 
 
 For a photo sharing application or microblogging tool, adding \emph{chaff} 
 means posting more content, but fabricated \todo{the q is do we want to?}. It 
