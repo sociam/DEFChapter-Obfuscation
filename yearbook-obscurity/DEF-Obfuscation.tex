@@ -650,13 +650,17 @@ to create obfuscated data which is difficult to distinguish from standard
 behaviour. Services like Please Don't Stalk 
 Me\footnote{\url{http://pleasedontstalkme.com/}} enable geotagging tweets 
 with fake location information, and the Chrome browser supports faking location 
-information in the browser, throught the Chrome Developer Tools emulator.
+information in the browser, throught the Chrome Developer Tools emulator. These 
+tools can be used for some of the previuos strategies, for noise injection by 
+using random locations, or for systematic deviation, when only the location of 
+certain tweets is modified.
 
 \subsubsection{Palimpsestification}
 Taking the idea of coherent deviations a stage further, and combining with the
 idea of \emph{chaff}, the user could create multiple overlapping traces; each
 trace would be locally coherent and plausible, but someone inspecting the data would have no way to know which is the real one.
-This is similar to the strategy of CacheCloak \todo{reference}, which
+This is similar to the strategy of 
+CacheCloak~\cite{Meyerowitz:2009:HSF:1614320.1614358}, which
 continuously generates sheaves of probable future behaviour and searches
 location based services relevant to each  path. The computational support
 required is similar to the coherent deviation example---to be able to run a
@@ -845,8 +849,6 @@ date of birth, thus allowing the actual date be know, without revealing the
 age. Any functionality of a service that is regarded of low importance can be 
 used as a place where noise can be injected, or where the granularity can be 
 coarsened. This of course leaves part of the information unobfuscated. 
-% example of thsi is the way Peter uses google services under a diff 
-% name Ambrose P.
 
 Changing the declared date of birth can be also \emph{systematic}, a user can 
 choose an untrue date which to reuse in \emph{all} services that require it. 
@@ -855,12 +857,26 @@ supported by services like Fake Name
 Generator\footnote{\url{http://www.fakenamegenerator.com/}} which will not only 
 create geographically localized names, but also provide valid additional 
 information like address, credit card, email address, phone number, mother 
-maiden's name, username and password, employment information, weight and 
-height and blood type, and even a favourite colour. Using the persona 
-consistently online enables a complete separation between the real person and 
-their presence online. It is difficult, of not impossible to use these personas 
-when dealing with official (regulated) services as mentioned above.
+maiden's name, username and password, employment information, weight and height 
+and blood type, and even a favourite colour. Using the persona systematically 
+and consistently enables a complete separation between the real person and their 
+presence online. It is difficult, of not impossible to use these personas when 
+dealing with official (regulated) services as mentioned above.
+% example of thsi is the way Peter uses google services under a diff 
+% name Ambrose P.
 
+Several personas can be created and used to simulate collaborative obfuscation 
+strategies, where the fake characters mimick the existence of supporting 
+evidence for the lie \todo{this sentence makes no sense, reformulate}. The 
+practice, known as \emph{astroturfing}, is used to mask the origin of online 
+posts supporting (or contesting) a topic, organization or political message, 
+and make them look like a grassroots movement.
+
+\todo{add more about collaborative strategies? there is already a lot in the 
+prev section}
+
+\todo{if we use different persona to represent us online, we need dthe 
+collaboration of friends to be able to use social networking services like fb}
 
 \subsection{Personal Data Stores - allies on the intimacy battleground}
 
