@@ -414,6 +414,15 @@ While these tools are dedicated to obfuscating action and identity for actions i
 
 To reduce city-wide tracking using transport cards such as the London Oystercard, NYC MetroCard, as well as  purchase tracking via loyalty card schemes, a common practice that has arisen in several of these cities has been to host social meetups where people regularly gather and trade/swapping their valueless cards.  This allows them to blur data mining algorithms by eliminating the assumption that a single card will be owned and used by a single person, but instead by a constantly evolving group \cite{lockton}.
 
+\todo{Apple patent on cloned identities of the principal user - 
+http://www.forbes.com/sites/andygreenberg/2012/06/20/apple-patents-technique-tha
+t-uses-cloned-doppelgangers-to-protect-your-privacy/}
+
+
+\todo{for full disapearance act:  How to Disappear: Erase Your Digital 
+Footprint, Leave False Trails, and Vanish without a Trace by Frank M. Ahearn and 
+Eileen C. Horan. 3 chapters on disinformation and creating false trails}
+
 % \todo{Refs to work in\ldots}
 % \begin{itemize}
 %   \item Marwick, public domain: \cite{marwick2012Public}
@@ -638,7 +647,10 @@ created, such as going to the convention centre in the day, and returning to a
 hotel at night. This requires a computational model of user behaviour which can
 be applied to new locations---a non trivial task. However there is the potential
 to create obfuscated data which is difficult to distinguish from standard
-behaviour. \todo{examples}
+behaviour. Services like Please Don't Stalk 
+Me\footnote{\url{http://pleasedontstalkme.com/}} enable geotagging tweets 
+with fake location information, and the Chrome browser supports faking location 
+information in the browser, throught the Chrome Developer Tools emulator.
 
 \subsubsection{Palimpsestification}
 Taking the idea of coherent deviations a stage further, and combining with the
@@ -784,12 +796,13 @@ strategies as described in Section \ref{sec:strategies}, with adaptations
 depending on the data type. 
 
 For a photo sharing application or microblogging tool, adding \emph{chaff} 
-means posting more content, but fabricated \todo{the q is do we want to?}. It 
-can be realised by posting public domain photos on Instagram from a randomly 
+could mean posting more content, but fabricated. 
+It can be realised by posting public domain photos on Instagram from a randomly 
 chosen topic, or flooding Twitter with randomy generated text, older posts, or 
 fragments from existing texts like web pages or books. For browsing history in 
-an online shop, we can simulate browsing of various items by randomly requesting 
-a variable number of pages beside the page we are interested in. While it does 
+an online shop, we can use bots or browser extensions like 
+\todo{example} to simulate browsing of various items by randomly requesting 
+pages beside the page we are interested in. While it does 
 not hide the fact that we visited the shop, but it can obfuscate our interest. 
 This can be useful when dealing with Amazon, or another large scale marketplace, 
 but it can be less useful when the online shop is catering for a small niche 
@@ -801,8 +814,8 @@ need not be too complex.
 Similar to using prepaid disposable [burner] phones to avoid surveillance, 
 ghost email can be used to obfuscate online activity, as it prevents the email 
 address from being used as an identifier for the person. For websites which 
-require registration with an email address, we can use disposable email 
-addresses, which would forward the email received to a real email address. With 
+require registration, we can use disposable email addresses, which would 
+forward the email received to a real email address. With 
 the help of disposable email provider services\footnote{A comparison between 
 some disposable email providers is available on LifeHacker 
 \url{http://lifehacker.com/5306452/how-do-you-keep-your-email-address-private}}, 
@@ -814,21 +827,12 @@ GuerillaMail, 10 minute mail, etc. provide temporary email addresses with a
 short life span. 
 
 Applying \emph{noise injection} or \emph{coarsened granularity} strategies can 
-limit the benefit of the service, and in some cases defeat the purpose of 
-using it altogether - like injecting noise in the images posted on Instagram.
+limit the benefit of some services, and in some cases defeat the purpose of 
+using them altogether - like injecting noise in the images posted on Instagram.
 % In an online shop, can make use of features like ``similar items'' to get 
 % information about the actual thing we want to know, but it is tricky and would 
 % not work everywhere. 
-With money expenditure we can pay in cash at some shops and with the card at 
-others, and change the pattern randomly. And we can change granularity by 
-taking out cash only once for several shopping trips. Gift cards 
-and prepaid vouchers bought with cash 
-\footnote{As did this woman trying to hide her pregnancy ``from the Internet 
-and marketing companies'': My Experiment Opting Out of Big Data Made Me Look 
-Like a Criminal \url{http://time.com/83200/privacy-intExamples of this 
-inernet-big-data-opt-out/}} can be used for online shopping as well as on the 
-high street. Simultaneously using a loyalty card can revert the obfuscating 
-effects of such measures. 
+
 These strategies can however be used successfully with optional data that 
 is required by some services but do not impact on the service provided. 
 Randomly changing your date of birth or hometown, or even your name in Facebook 
@@ -845,7 +849,17 @@ coarsened. This of course leaves part of the information unobfuscated.
 % name Ambrose P.
 
 Changing the declared date of birth can be also \emph{systematic}, a user can 
-choose an untrue date which to reuse in \emph{all} services that require it.
+choose an untrue date which to reuse in \emph{all} services that require it. 
+Using the same completely fabricated persona in all online communication is 
+supported by services like Fake Name 
+Generator\footnote{\url{http://www.fakenamegenerator.com/}} which will not only 
+create geographically localized names, but also provide valid additional 
+information like address, credit card, email address, phone number, mother 
+maiden's name, username and password, employment information, weight and 
+height and blood type, and even a favourite colour. Using the persona 
+consistently online enables a complete separation between the real person and 
+their presence online. It is difficult, of not impossible to use these personas 
+when dealing with official (regulated) services as mentioned above.
 
 
 \subsection{Personal Data Stores - allies on the intimacy battleground}
