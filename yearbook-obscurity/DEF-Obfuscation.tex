@@ -89,8 +89,8 @@ the old ``I have nothing to hide; therefore I should not care'' argument has fal
 Previously theoretical arguments of what \emph{might} happen if one is pervasively tracked have been replaced by the tangible reality of hundreds, or thousands of separate information brokers 
 (some visible, others invisible), grappling with one another to build the most 
 complete picture of each and every individual's life, so that such models 
-can be used to precisely target, and behaviourally individuals often in ways too 
-subtle to be perceived (e.g. \cite{Kramer17062014}). 
+can be used to precisely target, and behaviourally manipulate individuals,
+often in ways too subtle to be perceived (e.g. \cite{Kramer17062014}). 
 
 The sophisticated methods being used to track and pinpoint details of individuals 
 has not been met with a corresponding increase in public education to spread awareness
@@ -399,58 +399,62 @@ that they can be verified in the future without revealing them as true at the
 time.
 
 \section{Review of current approaches and tools} 
-\todo{Max to do some writing}
 
-\todo{Refs to work in\ldots}
-\begin{itemize}
-  \item Marwick, public domain: \cite{marwick2012Public}
-  \item Reigeluth, data traces: \cite{reigeluth2014Data}
-  \item Beer, algorithms and power: \cite{beer2009Algorithm}
-  \item Goldberg, public/virtual participation: \cite{goldberg2010Rethinking}
-  \item Simon, panopticism \cite{simon2005Panopticism}
-\end{itemize}
+Privacy tools for end-users of the Web have focused on approaches to allow people to cloak their originating location (IP address) and identity online, as they access web sites that may be instrumented with code from any number of advertising networks and tracker agents.  The most basic of such tools constitute simple browser add-ons that explicitly block the execution and downloading of web beacons, tracking pixels and other tracking agents, through use of a dictionary-approach (of known tracking agents) (e.g., DisconnectMe or AdBlock Plus), or using adaptive algorithms to infer cross-site tracking (e.g., Privacy Badger\footnote{Privacy Badger - \url{https://www.eff.org/privacybadger}}).  Similarly, plugins such as HTTPSEverywhere\footnote{} force the browser to communicate with all web sites using encrypted HTTP, to prevent ISPs and other intermediaries from eavesdropping on traffic between the end user's computer and the end-user host.  The use of HTTPs also thwarts some deep-packet inspection \cite{kumar2006advanced} (DPI) based tracking methods, such as employed by public WiFi access points such as those at international Starbucks coffee shops, used to determine customers' interests and also to filter and re-rank search results to benefit Starbucks.
 
+The most advanced of such tools, currently is \emph{Tor} \cite{dingledine2004tor}, which works at the network-level to obscure the origin of packets when communicating with a web site or other third party.  Tor works as a peer-to-peer overlay network that routes Web and other network requests through a randomly-selected circuit of hosts on the network using the onion routing technique, which makes it intractable to deduce the origin of a particular packet.  In conjunction with end-to-end encryption (such as over HTTPs), tor has been shown to effectively thwart eavesdropping and DPI methods.
 
-\begin{itemize}
-  \item The revolution has started!
-  \item tor, anonymous remailers, burner phones, gotta change up, yo!
-  \item HTTPSEverywhere
-  \item Surveillance and Society: \url{http://library.queensu.ca/ojs/index.php/surveillance-and-society}
-  \item CVDazzle
-  \item Heat-signature cloaking burqas, hoodies
-  \item Bluetooth and MAC randomisation in iOS 8
-  \item Silent Circle, Cryptocat
-  \item DNT in IE10
-  \item Adblock/Adblock Plus, Privacy Badger, Disconnect.Me
-  \item HTTPsEverywhere
-  \item VPNs 
-\end{itemize}
+Even with such tools, ISPs, mobile broadband providers and other ``last mile'' internet access providers can collect a significant quantity of low-level data pertaining to the physical place/times that a person accesses sites, the quantity of data exchanged, and the potential destinations.  To thwart this level of tracking, several hardware vendors and operating systems are starting to incorporate the ability to perform identifier randomisation (such as MAC-address and Bluetooth hardware address randomisation\footnote{Such features are expected to be introduced as a standard feature to the consumer market for the first time by Apple in iOS 8 - \url{http://appleinsider.com/articles/14/06/09/mac-address-randomization-joins-apples-heap-of-ios-8-privacy-improvements}}.  Such features are standard for an emerging group of speciality \emph{security hardened} devices, including security-enhanced mobile phones and tablets (such as the Black Phone\footnote{Black Phone - \url{https://www.blackphone.ch}}). 
+% \todo{Refs to work in\ldots}
+% \begin{itemize}
+%   \item Marwick, public domain: \cite{marwick2012Public}
+%   \item Reigeluth, data traces: \cite{reigeluth2014Data}
+%   \item Beer, algorithms and power: \cite{beer2009Algorithm}
+%   \item Goldberg, public/virtual participation: \cite{goldberg2010Rethinking}
+%   \item Simon, panopticism \cite{simon2005Panopticism}
+% \end{itemize}
 
-Open source and trustworthiness
+% \todo{Max to do some writing}
 
-Theory of obfuscation:
-Types of disinformation \cite{alexander2010Disinformation}:
-\begin{description}
-  \item[redaction] is hiding some or all of the information in a message
-  \item[airbrushing] is changing some of the information. \emph{local crowd
-  blending} means change it to a nearby message likely to be plausible.
-  \emph{global crowd blending} means change it to a message in a dense part of
-  the space.
-  \item[curveball] add extra distracting information, push message into low
-  density space
-\end{description}
+% \begin{itemize}
+%   \item The revolution has started!
+%   \item tor, anonymous remailers, burner phones, gotta change up, yo!
+%   \item HTTPSEverywhere
+%   \item Surveillance and Society: \url{http://library.queensu.ca/ojs/index.php/surveillance-and-society}
+%   \item CVDazzle
+%   \item Heat-signature cloaking burqas, hoodies
+%   \item Bluetooth and MAC randomisation in iOS 8
+%   \item Silent Circle, Cryptocat
+%   \item DNT in IE10
+%   \item Adblock/Adblock Plus, Privacy Badger, Disconnect.Me
+%   \item HTTPsEverywhere
+%   \item VPNs 
+% \end{itemize}
 
-Some existing stuff and the things we can link it to later
+% Open source and trustworthiness
+% Theory of obfuscation:
+% Types of disinformation \cite{alexander2010Disinformation}:
+% \begin{description}
+%   \item[redaction] is hiding some or all of the information in a message
+%   \item[airbrushing] is changing some of the information. \emph{local crowd
+%   blending} means change it to a nearby message likely to be plausible.
+%   \emph{global crowd blending} means change it to a message in a dense part of
+%   the space.
+%   \item[curveball] add extra distracting information, push message into low
+%   density space
+% \end{description}
 
-\begin{itemize}
-  \item TrackMeNot generates plausible google searches (Chaff)
-  \item FaceCloak? Encrypts facebook data
-  \item CacheCloak - sends a range of plausible future paths to location based
-  services (Palimpsestification)
-  \item Shopping card loyalty swaps (Account Sharing)
-  \item DuckDuckGo - mixing up user searchers (Account Sharing, no cleverness)
-  \item CVDazzle
-\end{itemize}
+% Some existing stuff and the things we can link it to later
+
+% \begin{itemize}
+%   \item TrackMeNot generates plausible google searches (Chaff)
+%   \item FaceCloak? Encrypts facebook data
+%   \item CacheCloak - sends a range of plausible future paths to location based
+%   services (Palimpsestification)
+%   \item Shopping card loyalty swaps (Account Sharing)
+%   \item DuckDuckGo - mixing up user searchers (Account Sharing, no cleverness)
+%   \item CVDazzle
+% \end{itemize}
 
 
 
