@@ -65,7 +65,7 @@ support for emerging forms of socialisation and connectedness. However, there
 are risks associated with disclosing personal information, and present systems
 show a systematic asymmetry between the subjects of the data and those who
 control and manage the way that data is propagated and used. In this chapter, we
-explore a set of techniques for ameliorating the tension between the 
+explore a set of obfuscation techniques for ameliorating the tension between
 the benefits of sharing, and a distrust of those with whom we share our data.
 \end{abstract}
 
@@ -96,8 +96,8 @@ The sophisticated methods being used to track and pinpoint details of individual
 has not been met with a corresponding increase in public education to spread awareness
 of how people are being tracked, nor with a proliferation of counter-tracking and 
 counter-surveillance tools that can be readily used by end-user citizens to defend 
-themselves from such tracking.  As a result, a great asymmetric divide has grown between 
-those brokers that track and end-user citizens who are being tracked and manipulated, 
+themselves.  As a result, a great asymmetric divide has grown between 
+those brokers that track and citizens who are being monitored and manipulated, 
 and whose individual autonomy is being threatened.  
 
 % 
@@ -135,9 +135,9 @@ and whose individual autonomy is being threatened.
 % \cite{facebookstudy}).           
 
 
-Bentham's thought experiment of the Panopticon, developed by Foucault describes
+Bentham's thought experiment of the Panopticon, developed by Foucault, describes
 a prison in which inmates lives are constantly surveilled as a means of
-discipline and exertion of control.  In the world of technologically driven data collection which we inhabit, this has effects both on people's behaviour as they internalise the fact that they are surveilled, and on the way in which they are treated, and \emph{socially sorted} by the gears of our algorithmic society\cite{simon2005Panopticism}.
+discipline and exertion of control.  In the world of technologically driven data collection which we inhabit, this has effects both on people's behaviour as they internalise the fact that they are surveilled, and on the way in which they are treated, and \emph{socially sorted} by the gears of our algorithmic society~\cite{simon2005Panopticism}.
 
 We are interested in practises which can cloud the lenses of the observers, to
 choose how we are seen, and to help regain some control of
@@ -145,12 +145,14 @@ the manner in which our lives are surveilled, both socially and otherwise:
 \begin{quote}``We give up on privacy because we live in the Panopticon. A lot of
 people think there is an inevitability about this [loss of privacy]. But the
 availability of data does not sanction its use.'' --- Sir Nigel Shadbolt,
-quoted in the \emph{Wall Street Journal} \cite{rooney2012OpenData}.\end{quote}
+quoted in the \emph{Wall Street Journal}~\cite{rooney2012OpenData}.\end{quote}
+
+% Bruce Schneider: ``privacy is not about something to hide its about autonomy and control; when you are observed you cannot be in control''
 
 In this chapter, we discuss and analyse methods of privacy protection that
 advance beyond the current state of anonymisation tools that merely obscure the tracks
-of individuals towards those that employ methods borrowed from
-information warfare \cite{gursestranslating,lyon2007surveillance}, in order to allow individuals to regain autonomy
+of individuals, towards those that employ methods borrowed from
+information warfare~\cite{gursestranslating,lyon2007surveillance}, in order to allow individuals to regain autonomy
 from unsolicited tracking and behavioural control.  We first discuss the rise of 
 personal data economy, followed by a survey of lying and falsification in context-aware 
 systems, current anonymisation and privacy tools. This is followed by an overview of
@@ -161,12 +163,12 @@ speculative, future possibilities.
 \section{Background}
 
 \subsection{The rise of personal data and services reliant on it, and relation
-so surveillance}
+to surveillance}
 
 As we pass through the digitally augmented world that we collectively inhabit,
 the set of actions with the potential to produce data grows year on year.
 Portions of this outpouring are kept and stored as
-\emph{capta}, from \emph{capere}: to keep \cite{dodge2005codes}. From
+\emph{capta}, from \emph{capere}: to keep~\cite{dodge2005codes}. From
 using an access card to unlock a door at the workplace, right down to tracking
 individual footfalls, pervasive digital systems illuminate and annotate our
 physical activity. Accreting around this body of physical observation is an
@@ -174,9 +176,9 @@ expanding sphere of mental observation and analysis. This can take the form of
 active practises around recording mental states, such as journalling, but it can
 also include computational inference, where frequency of posting on social
 networks becomes an adjunct metric for connectedness, and search terms 
-indicators of intent. As such, the modes of collection of this information can
+indicators of intent. As such, the modes of collecting this information can
 range from explicit, user initiated submission of data, through consensual
-background recording to invisible, asymmetric electronic surveillance.
+background recording, to invisible, asymmetric electronic surveillance.
 
 Increasingly, in order to utilise services, we must provide our data to third
 parties. This ranges from mobile phone numbers being required for Yahoo
@@ -222,23 +224,23 @@ sharing of data to function:
 \begin{quote}``Literally, within an hour of waking up, I am playing at least two games that promise to help me become a more productive
 worker and prolific writer. \ldots I want to suggest two things: 1) that gamification is a form of
 surveillance; and 2) this surveillance is
-pleasurable''\cite{whitson2013gaming}\end{quote}
+pleasurable''~\cite{whitson2013gaming}\end{quote}
 Fitness apps, activity monitors, location based social networks require the
 user to hand over their location data in return for the promise of increased
 fitness, self awareness to the ability to connect with others. 
 This user-driven data collection becomes a form of \emph{participatory surveillance}:
 \begin{quote}
-Online social networking can also be empowering for the user, as the monitoring and 
+``Online social networking can also be empowering for the user, as the monitoring and 
 registration facilitates new ways of constructing identity, meeting friends and colleagues 
 as well as socializing with strangers. This changes the role of the user from passive to 
 active, since surveillance in this context offers opportunities to take action, seek 
-information and communicate.(Albrechtslund, \cite{albrechtslund2008online})
+information and communicate.''~\cite{albrechtslund2008online}
 \end{quote} 
 
 In summary, there are multitudinous situations where we are coerced, cajoled or
 manipulated into sharing our personal data, and the cost of avoiding such
 sharing is increasingly becoming untenable for large sections of the population
-of the industrialised world.
+of the connected world.
 
 \subsection{Sharing is a loss of control}
 
@@ -259,7 +261,7 @@ around the terms and conditions of data handling companies; and even without
 malice accidents can expose vast swathes of personal data, or court proceedings
 may force private communications to become public - the Enron emails still
 represent the largest publicly available corpus of private emails. Essentially,
-once data is shared, the sharer has no control over what happens to it. Even more, once shared, the data becomes persistent. As Bruce Schneider commented\footnote{as part of a panel at the ``Don't Spy on Us'' day in London, UK, in the 7th of June 2014} that we are in the middle of a social change---``the loss of the ephemeral''. He said that ``Google doesn't only know better what I think than my wife does, it knows what I think better than I do because it remembers all I said and did''. As humans we are used to think that what we say will be forgotten sooner or later, and that we can change our minds, which is not the case anymore when there is a persistent record of everything we say and do.
+once data is shared, the sharer has no control over what happens to it. Once shared, the data becomes persistent. Bruce Schneider commented\footnote{as part of a panel at the ``Don't Spy on Us'' day in London, UK, in the 7th of June 2014} that we are in the middle of a social change---``the loss of the ephemeral''. He said that ``Google doesn't only know what I think better than my wife does, it knows what I think better than I do because it remembers all I said and did''. As humans we are used to think that what we say will be forgotten sooner or later, and that we can change our minds, which is not the case anymore when there is a persistent record of everything we say and do.
 
 \item[Technology improves:] what is safe to share now may not be in the
 future. Brad Templeton from the Electronic Freedom Foundation uses the analogy
@@ -271,28 +273,30 @@ recognition on massive quantities of CCTV footage, and reconstruct the movements
 of a large proportion of citizens. This corresponds to the surveillance
 robots coming back in time and monitoring us now. In a similar vein: ``Would
 you have liked to be gay 40 years ago in a monitored society? Or an enemy of J.
-Edgar Hoover with modern tools in his hands?'' \cite{templetonWatched}. Sharing
+Edgar Hoover with modern tools in his hands?''~\cite{templetonWatched}. Sharing
 data today cedes control to the entities of tomorrow, with their greatly
 enhanced capabilities.
+
 \item[De-identification doesn't work:] data is often shared subject to the
 condition that it will only be shared in an \emph{anonymised} or
 \emph{de-identified} form. As a highly public example, Netflix challenged the
 public to create a better recommendation engine, based on a corpus of anonymised
 viewing histories. Subsequently, it was shown that many records within the
 database could be identified by comparison with publicly available
-sources \cite{narayanan2008Deanon}, let alone access to other, non-public data.
-Narayanan and Felten's recent report \cite{narayanan2014Deidentification} explains in a non-technical manner why
+sources~\cite{narayanan2008Deanon}, let alone access to other, non-public data.
+Narayanan and Felten's recent report~\cite{narayanan2014Deidentification} explains in a non-technical manner why
 de-idenfication of data remains problematic. This is also highly dependant on
 the data in question; location data is extremely difficult to anonymise, with
-four datapoints being enough for re-identification in many cases \cite{montjoye2013Unique}
+four datapoints being enough for re-identification in many cases~\cite{montjoye2013Unique}.
+
 \item[Databases can be joined:] as more databases of personal information
 become available, whether publicly or privately, the possiblity to match, join,
-correlate and shara data increases, and the effects of single points expand well
+correlate, and share data increases, and the effects of single points expand well
 beyond the environment in which they were created or shared. In short, data are
 held in \emph{leaky containers}: ``data move freely between different sectors of
 society with the result that information from discrete contexts, e.g.,
  private life, work life and shopping, are being mixed rather than contained 
- separately.''\cite[p.37--44]{lyon2001surveillance}.
+ separately.''~\cite[p.37--44]{lyon2001surveillance}.
 \end{description}
 
 %  \todo{What you are sort of getting at as ``rights'' to data and the lack of
@@ -308,8 +312,8 @@ society with the result that information from discrete contexts, e.g.,
 Studies in Computer Mediated Communication (CMC) and agent-based modeling of
 online communities have studied the use of deception both in real and simulated
 settings, revealing a contrast between \emph{pro-social} forms of lying and
-deception, and \emph{anti-social} forms of deception
-\cite{iniguez2014Deception}.  A wide range of pro-social kinds of deception have
+deception, and \emph{anti-social} forms~\cite{iniguez2014Deception}.
+A wide range of pro-social kinds of deception have
 been documented, primarily around coping strategies that people adopt towards
 dealing with the demands and complexities of social mediation in increasingly
 digitally-connected lives.            
@@ -318,36 +322,33 @@ In the first of two strands of work pertaining to such coping strategies, was a
 focus on how people often leverage the ``space of ambiguity'' created by
 ``low-bandwidth'' computer-mediated communications channels, such as SMS (text
 messaging) or Instant Messaging, or even voice mobile phone conversations, to
-facilitate the use of pro-social deception for thep purpose of efficient
+facilitate the use of pro-social deception for the purpose of efficient
 mediation.  For instance, an individual might intentionally ignore an incoming
 call, or blame poor reception (where there is none) to terminate a call
 prematurely, in a situation where a person is stressed with other priorities, or
-avoid talking to someone for another reason.  In work by Aoki and Woodruff
-\cite{Aoki:2005:MSS:1054972.1054998}, it is argued that such uses of ambiguity
+avoid talking to someone for another reason.  In work by Aoki and Woodruff~\cite{Aoki:2005:MSS:1054972.1054998}, it is argued that such uses of ambiguity
 are beneficial to the actors who use them, by providing effective avenues for
 exercising control while simultaneously mitigating potentially socially awkward
-or damaging situations, while simultaneously incurring low social risk in the
-process.  They also point out that, as digital systems become increasingly
-sensor enabled and aware of people's activities in order to provide enable more
+or damaging situations, with a low social risk.  They also point out that, as digital systems become increasingly
+sensor enabled and aware of people's activities in order to provide more
 ``real-life'' kinds of interpersonal interaction, such spaces begin to collapse,
 reducing people's ability to leverage them, thereby potentially reducing
 individual autonomy.  The authors argue, thus, that it is essential for
-designers to thus design into them the ability for people to give themselves the
+designers to design into them the ability for people to give themselves the
 cover of ambiguity to support flexibility in coping strategies for social
 mediation.                     
 
 The second pertains to the use of ``butler lies'', a more explicit use of
 deception, for the purposes of simplifying social channel mediation; for
-example, using the excuse that ``have a meeting with my boss'', when in fact, no
+example, using the excuse that ``I have a meeting with my boss'', when in fact, no
 such meeting exists, in order to terminate a conversation without the other
-participant feeling like they aren't important
-\cite{Hancock:2009:BLA:1518701.1518782}.  Among several studies analysing the
-use of butler lies in CMC has been work characterising the volume of such lies,
+participant feeling unimportant~\cite{Hancock:2009:BLA:1518701.1518782}.  Among several studies analysing the
+use of butler lies in CMC there has been work characterising the volume of such lies,
 which, reported in a study by Reynolds et al.
 \cite{Reynolds:2013:BLB:2441776.2441862}, amounted to 27.1\% of all
 communications mediation messages sent by participants who texted partners and
-co-workers. The purpose of such messages were often to mitigate social
-awkwardness, reputational damage, and reduce attentional load and used
+co-workers. The purpose of such messages was often to mitigate social
+awkwardness, reputational damage, and reduce attentional load, and they were used
 independent of the nature of the relationship among communicating parties of
 their relationship to a person.  Such lies were particularly employed in awkward
 situations such as when a speaker wishes to convey a message that ``she is too
@@ -383,18 +384,15 @@ things to their professional colleagues, while presenting differently to friends
 and family or non-mainstream friend groups. 
 As an example, prolific content creators on Youtube have multiple online
 personae for different kinds of content---``official'' channels, a personal one,
-and sometimes channes for characters from their works
-\cite{guy2014ConstructedIdentity}.
+and sometimes channes for characters from their works~\cite{guy2014ConstructedIdentity}.
+Bruce Schneier called Facebook ``a collapse of context'' where the personae are
+forceably merged.
 
-Bruce Schneier called Facebook ``a collapse of context'' where the personas are
-forceably merged and your grandmother can read and comment on what you posted
-for your friends, or your [future] boss can see drunk photos of you posted by
-
-Dalton describes pseudonymity in social machines\cite{dalton2013Pseudonymity} as
-a one-to-one or a many-to-one relationship---between the human and the
+Pseudonyms are one way of representing personae. In~\cite{dalton2013Pseudonymity} Dalton describes pseudonymity in social machines as
+a one-to-one or a one-to-many relationship---between the human and the
 pseudonyms. It is possible for a person to be consistently known by a pseudonym
 over several systems, or use many pseudonyms because they are easy to create and
-to maintain. However, the one-to-many relation is possible as well, as
+to maintain. However, the many-to-one relation is possible as well, as
 illustrated by Anonymous, or by Nicholas Bourbaki in the field of mathematics,
 where the same pseudonym is used by a group. The group can evolve in time while
 the pseudonym remains. 
@@ -404,7 +402,7 @@ the pseudonym remains.
 Sharing certain personal data is a barrier to anonymity and obfuscation; 
 data which is rooted in physical fact provides multiple opportunities for
 joining up otherwise separate databases. 
-The lie maintenance required to avoid discovery may be trivial (``sorry, I’m hungry,
+The lie maintenance required to avoid discovery may be trivial (``sorry, I'm hungry,
 have to go!'') but may become significantly more complicated as lies extend over
 time, and become woven into the social fabric. The ability to compare
 multiple accounts of history---especially once the time travelling
@@ -418,22 +416,22 @@ fabric is more obvious than weaknesses in a single thread.
 
 Sharing is a crude mechanism. Once data has been shared, the originator can no
 longer exert control over it, and must rely on the behaviour of the recipient,
-which as noted may fail to meet user expectations. As dana boyd
+which as noted may fail to meet user expectations. As danah boyd
 notes: ``Any model of privacy that focuses on the control of information will
-fail.''. This leads the teenagers that dana studies to
+fail''. This leads the teenagers that boyd studies to
 engage in \emph{social steganography}, manipulating messages so that ``Only 
 those who are in the know have the necessary information to look for and interpret the information 
-provided.''\cite{boyd2012Networked}. Strategies like this work when there is a
+provided.''~\cite{boyd2012Networked}. Strategies like this work when there is a
 difference in understanding between the surveilled and the surveiller, and
 collapses as soon as the comprehension barrier is removed.
 
 Validation, however is a more subtle tool:
-if a user’s personal dataset can be made sufficiently questionable as to be useless on its own,
+if a user's personal dataset can be made sufficiently questionable as to be useless on its own,
 then locus of control shifts to the user choosing to validate parts of the dataset,
 which can be performed in a more nuanced,
 contextualised manner. If a user is the final arbiter of trust, they can decide
 to i) sign parts of their record, so that it is verified public fact; ii)
-co-sign it with another entity, so either can  alsoverify it but not anyone 
+co-sign it with another entity, so either can  also verify it but not anyone 
 else;
 iii) verify it through an anonymous channel, so that the entity to whom they
 provide verification cannot propagate the claim further. This verification can
@@ -445,19 +443,19 @@ time.
 
 \section{Review of current approaches and tools} 
 
-Privacy tools for end-users of the Web have focused on approaches to allow people to cloak their originating location (IP address) and identity online, as they access web sites that may be instrumented with code from any number of advertising networks and tracker agents.  The most basic of such tools constitute simple browser add-ons that explicitly block the execution and downloading of web beacons, tracking pixels and other tracking agents, through use of a dictionary-approach (of known tracking agents) (e.g., DisconnectMe or AdBlock Plus), or using adaptive algorithms to infer cross-site tracking (e.g., Privacy Badger\footnote{Privacy Badger - \url{https://www.eff.org/privacybadger}}).  Similarly, plugins such as HTTPSEverywhere\footnote{HTTPS Everywhere - \url{https://www.eff.org/Https-everywhere}} force the browser to communicate with all web sites using encrypted HTTP, to prevent ISPs and other intermediaries from eavesdropping on traffic between the end user's computer and the end-user host.  The use of HTTPs also thwarts some deep-packet inspection (DPI)~\cite{kumar2006advanced} based tracking methods, such as employed by public WiFi access points such as those at international Starbucks coffee shops, used to determine customers' interests and also to filter and re-rank search results to benefit Starbucks.
+Privacy tools for end-users of the Web have focused on approaches to allow people to cloak their originating location (IP address) and identity online, as they access web sites that may be instrumented with code from any number of advertising networks and tracker agents.  The most basic of such tools constitute simple browser add-ons that explicitly block the execution and downloading of web beacons, tracking pixels and other tracking agents, through use of a dictionary-approach (of known tracking agents) (e.g., DisconnectMe\footnote{DisconnectMe - \url{https://disconnect.me/}} or AdBlock Plus\footnote{AdBlock Plus - \url{https://adblockplus.org/}}), or using adaptive algorithms to infer cross-site tracking (e.g., Privacy Badger\footnote{Privacy Badger - \url{https://www.eff.org/privacybadger}}).  Similarly, plugins such as HTTPSEverywhere\footnote{HTTPS Everywhere - \url{https://www.eff.org/Https-everywhere}} force the browser to communicate with all web sites using encrypted HTTP, to prevent ISPs and other intermediaries from eavesdropping on traffic between the end user's computer and the end-user host.  The use of HTTPs also thwarts some deep-packet inspection (DPI)~\cite{kumar2006advanced} based tracking methods, such as employed by public WiFi access points such as those at international Starbucks coffee shops, used to determine customers' interests and also to filter and re-rank search results to benefit Starbucks.
 
 In the middle have been a handful of application- or service- specific anti-tracking tools, including TrackMeNot~\cite{howe2009trackmenot}, a plugin which aims to reduce tracking and personalisation done by search-engines by diluting the user's query within a flood of other, random search queries. Similarly, CacheCloak~\cite{Meyerowitz:2009:HSF:1614320.1614358}, intercepts requests for a user's location from various location based services, and returns plausible nearby, but inaccurate, results.  
 
-Peer-to-peer systems such as Bittorrent, Freenet and others pose additional challenges for privacy because a user's client typically directly connects with a large number of other individuals' clients.  This means the individual's client location (IP address) is typically highly visible within the network, although, in some cases, using approaches like Tor to disguise location (discussed next) work in such settings depending on particular details.  However, work on disguising an individual's interests/queries within this network, to promote plausible deniability of intent within it include projects such as SwarmScreen~\cite{choffnes2009swarmscreen} and OneSwarm~\cite{Isdal:2010:PPD:1851182.1851198}.  Other approaches, including encrypting all transferred queries and data have been taken by systems such as Mega\footnote{Mega - \url{www.mega.com}}.
+Peer-to-peer systems such as Bittorrent, Freenet and others pose additional challenges for privacy because a user's client typically directly connects with a large number of other individuals' clients.  This means the client's location (IP address) is typically highly visible within the network, although, in some cases, using approaches like Tor to disguise location (discussed next) work in such settings depending on particular details.  Work on disguising an individual's interests (through queries) within this network, to promote plausible deniability of intent within it include projects such as SwarmScreen~\cite{choffnes2009swarmscreen} and OneSwarm~\cite{Isdal:2010:PPD:1851182.1851198}.  Other approaches, including encrypting all transferred queries and data have been taken by systems such as Mega\footnote{Mega - \url{www.mega.com}}.
 
-Perhaps the most sophisticated current tool developed for obscuring network activity and traffic origin is currently Tor~\cite{dingledine2004tor}, which works at the network-level to hide the origin of packets when communicating with a web site or other third party.  Tor works as a peer-to-peer overlay network that routes Web and other network requests through a randomly-selected circuit of hosts on the network using the onion routing technique, which makes it intractable to deduce the origin of a particular packet.  In conjunction with end-to-end encryption (such as over HTTPs), tor has been shown to effectively thwart eavesdropping and DPI methods.
+Perhaps the most sophisticated current tool developed for obscuring network activity and traffic origin is currently Tor~\cite{dingledine2004tor}, which works at the network-level to hide the origin of packets when communicating with a website or other third party.  Tor works as a peer-to-peer overlay network that routes Web and other network requests through a randomly selected circuit of hosts on the network using the onion routing technique, which makes it intractable to deduce the origin of a particular packet.  In conjunction with end-to-end encryption (such as over HTTPs), Tor has been shown to effectively thwart eavesdropping and DPI methods.
 
-Even with such tools, ISPs, mobile broadband providers and other ``last mile'' internet access providers can collect a significant quantity of low-level data pertaining to the physical place/times that a person accesses sites, the quantity of data exchanged, and the potential destinations.  To thwart this level of tracking, several hardware vendors and operating systems are starting to incorporate the ability to perform identifier randomisation (such as MAC-address and Bluetooth hardware address randomisation\footnote{Such features are expected to be introduced as a standard feature to the consumer market for the first time by Apple in iOS 8 - \url{http://appleinsider.com/articles/14/06/09/mac-address-randomization-joins-apples-heap-of-ios-8-privacy-improvements}}.  Such features are standard for an emerging group of speciality \emph{security hardened} devices, including security-enhanced mobile phones and tablets (such as the Black Phone\footnote{Black Phone - \url{https://www.blackphone.ch}}). 
+Even with such tools, ISPs, mobile broadband providers and other ``last mile'' internet access providers can collect a significant quantity of low-level data pertaining to the physical place and times that a person accesses sites, the quantity of data exchanged, and the potential destinations.  To thwart this level of tracking, several hardware vendors and operating systems are starting to incorporate the ability to perform identifier randomisation (such as MAC-address and Bluetooth hardware address randomisation\footnote{Such features are expected to be introduced as a standard feature to the consumer market for the first time by Apple in iOS 8 - \url{http://appleinsider.com/articles/14/06/09/mac-address-randomization-joins-apples-heap-of-ios-8-privacy-improvements}}.  Such features are standard for an emerging group of speciality \emph{security hardened} devices, including security-enhanced mobile phones and tablets (such as the Black Phone\footnote{Black Phone - \url{https://www.blackphone.ch}}). 
 
 While these tools are dedicated to obfuscating action and identity for actions in the digital realm, automatic tracking of people and their activities in the physical world has also increased, thanks to improvements in facial recognition, the introduction of digital tokens and keys for granting people access to physical spaces, membership cards ("loyalty programmes"), credit cards, and so forth.  A number of projects and approaches have similarly been introduced to reduce trackability in this space.  In terms of protection against facial recognition algorithms, for example, Harvey et al introduced a special makeup technique based on reverse-engineering the most popular face detection algorithms, called CV Dazzle~\cite{harvey2012cv}. To reduce infrared-camera based person tracking Harvey also introduced heat-signature cloaking burqas and hoodies in a line of clothing called \emph{Stealth Wear}\footnote{Stealth Wear - \url{ahprojects.com/projects/stealth-wear}}.
 
-To reduce city-wide tracking using transport cards such as the London Oystercard, NYC MetroCard, as well as  purchase tracking via loyalty card schemes, a common practice that has arisen in several of these cities has been to host social meetups where people regularly gather and trade/swapping their valueless cards.  This allows them to blur data mining algorithms by eliminating the assumption that a single card will be owned and used by a single person, but instead by a constantly evolving group \cite{lockton}.
+To reduce city-wide tracking using transport cards such as the London Oystercard, NYC MetroCard, as well as  purchase tracking via loyalty card schemes, a common practice that has arisen in several of these cities has been to host social meetups where people regularly gather and swap their valueless cards.  This allows them to blur data mining algorithms by eliminating the assumption that a single card will be owned and used by a single person, but instead by a constantly evolving group \cite{lockton}.
 
 % \todo{Apple patent on cloned identities of the principal user - 
 % http://www.forbes.com/sites/andygreenberg/2012/06/20/apple-patents-technique-tha
@@ -545,12 +543,11 @@ oustisde the digital sphere.
 
 For each strategy we discuss: \begin{inparaenum}[\itshape i\upshape)]
 \item what kind of alteration of baseline data is performed;
-\item what the motivations are;
-\item some possible use cases;
+\item what is the motivation for doing it; 
+\item what are the possible use cases;
 \item how some form of computational support aids in the deception;
-\item the systems (if any) which do this currently.
+\item some of the systems (if any) which do this currently.
 \end{inparaenum}
-
 
 It is problematic to consider the obfuscatory tactics here without a sense of
 the scenario in which they are to be deployed. Our scenario in this chapter is:
@@ -563,7 +560,7 @@ may be times when they wish to verify that they were at a particular location.
 \end{quote}
 The service is hence \emph{semi-trusted}: there are some benefits which the user
 wishes to accrue, but there are aspects of the service which makes the user
-unwilling to entrust their complete life history to it. We have chosen location
+unwilling to entrust their complete location history to it. We have chosen location
 as a clearly understandable facet of personal data, and one which can be easily
 used to re-identify individuals from anonymised
 datasets\cite{montjoye2013Unique}.
@@ -596,15 +593,15 @@ measurement is plotted against time, to give a sense of how an
 individual's position in space changes. Figure
 \ref{fig:SinglePlayerObfuscation}a is the true baseline, with a 
 curve indicating the continuous true position, and the dots
-representing reports of this position to the location-aware service. For each
-strategy we discuss: \begin{inparaenum}[\itshape i\upshape)]
-\item what kind of alteration of baseline data is performed;
-\item what is the motivation for doing it; 
-\item what are the possible use cases;
-\item how some form of computational support aids in the deception;
-\item how the strategy can be applied to other data
-\item some of the systems which do this currently.
-\end{inparaenum}
+representing reports of this position to the location-aware service. 
+% For each strategy we discuss: \begin{inparaenum}[\itshape i\upshape)]
+% \item what kind of alteration of baseline data is performed;
+% \item what is the motivation for doing it; 
+% \item what are the possible use cases;
+% \item how some form of computational support aids in the deception;
+% \item how the strategy can be applied to other data
+% \item some of the systems which do this currently.
+% \end{inparaenum}
 
 \subsubsection{Chaff}
 
@@ -651,7 +648,7 @@ posted letters may be signed with a city rather than a street address.
 \subsubsection{Systematic Deviation}
 
 In some cases, it may be possible to introduce systematic deviations into the
-digital record. In order to this, the user needs to be able to define which
+digital record. In order to do this, the user needs to be able to define which
 points to alter, and what to replace them with. One possibility would be
 thematic replacement---``hide the times I went to the pub by saying I
 was at a cafe''. Another would be to disguise the user's home and work
@@ -724,9 +721,9 @@ the possibilities in computational systems are analagous to pre-computational
 possibilities; computational support tends to be in the form of coordination to
 find collaborators or and check coherence of data points. The ideas outlined
 here are more speculative, as few computational systems of this type exist.
-There are aspects which make these strategies harder to pull off - coherence is
-then required across multiple different accounts; however the counterpoint is
-that if successful, the obfuscation is better supported and harder to spot.
+There are aspects which make these strategies harder to pull off as coherence is
+required across multiple different accounts; however the counterpoint is
+that if successful, the obfuscation is better supported and harder to detect.
 
 \subsubsection{Artificial co-location}
 One way to obtain a realistic but untrue location trace is to re-present the
@@ -734,7 +731,7 @@ trace of a collaborator. This can look like relatively natural
 behaviour; two people meeting up to carry out joint activities or socialisation.
 Computational support here can involve finding accomplices to ``co-locate''
 with---people who are willing to share their location, and are behaving in ways
-which match the desired story---as well as the technical business of
+which match the desired story---as well as the technical details of
 transferring location devices between accounts.
 
 \subsubsection{Supporting Evidence}
@@ -784,10 +781,9 @@ Computational intelligence can be enlisted to support many different ways of ass
    Computational support involves finding accounts to share, and ensuring that
    each account is only accessed by a single person at any given time.
    \item[\emph{Structured}] schemes allow for accounts to be used as appropriate
-   according to some criterion. If a locaFor this to work tion service offers 
-history based
+   according to some criterion. If a location service offers history based
    benefits (e.g. loyalty rewards or reputation) then it could be beneficial to
-   borrow a local user's account when going on holiday---Couchsurfing but with
+   borrow a local user's account when going on holiday---couchsurfing but with
    login credentials instead of flats. Infrastructure would be required to
    discover appropriate accounts, and mediate access. 
 %    \todo{More explanation? Link to powerlevelling in WoW?}
@@ -809,11 +805,10 @@ space. The user then has some level of choice about who to share the data with
 and how. This is not always the case, however: cell tower records can identify
 user's locations---and individuals can be picked out from very sparse
 histories\cite{montjoye2013Unique}. Smart phone manufacturers collected 
-location data from their users without their knowledge--which regardless of the 
-possible good intentions or technical reasons\footnote{\\Apple's response: 
-\url{http://www.apple.com/pr/library/2011/04/27Apple-Q-A-on-Location-Data.html 
+location data from their users without their knowledge---which regardless of the 
+possible good intentions or technical reasons\footnote{Apple's response:\\\url{http://www.apple.com/pr/library/2011/04/27Apple-Q-A-on-Location-Data.html 
 }} behind the logging, led to a public outcry when it was revealed in April 
-2011\footnote{\url{http://radar.oreilly.com/2011/04/apple-location-tracking.html}
+2011\footnote{\url{O'Reilly Radar: http://radar.oreilly.com/2011/04/apple-location-tracking.html}
 % \\ArsTechnica: \url{ 
 % http://arstechnica.com/apple/2011/04/how-apple-tracks-your-location-without-your 
 % -consent-and-why-it-matters/}, \\Wired: 
@@ -823,7 +818,7 @@ possible good intentions or technical reasons\footnote{\\Apple's response:
 
 Obfuscating data (location or otherwise) can be done only if the data is 
 known to be collected in the first place. Some knowledge about the data 
-collection process--what data is captured, when--helps improve the obfuscation. 
+collection process---what data is captured, when---helps improve the obfuscation. 
 
 Some data, even when known to be collected, cannot be obfuscated. Examples 
 include all official data like census data, police reports, tax returns, health 
@@ -850,7 +845,7 @@ fragments from existing texts like web pages or books. For browsing history in
 an online shop, we can use bots or browser extensions, or tools like Selenium\footnote{\url{http://docs.seleniumhq.org/}}
 to simulate browsing of various items by randomly requesting 
 pages beside the page we are interested in. While it does 
-not hide the fact that we visited the shop, but it can obfuscate our interest. 
+not hide the fact that a person visited the shop, it can obfuscate their interest. 
 This can be useful when dealing with Amazon, or another large scale marketplace, 
 but it can be less useful when the online shop is catering for a small niche 
 market. 
@@ -860,7 +855,7 @@ need not be too complex.
 
 Similar to using prepaid disposable [burner] phones to avoid surveillance, 
 ghost email can be used to obfuscate online activity, as it prevents the email 
-address from being used as an identifier for the person. For websites which 
+address from being used as a global identifier for the person. For websites which 
 require registration, we can use disposable email addresses, which would 
 forward the email received to a real email address. With 
 the help of disposable email provider services\footnote{A comparison between 
@@ -882,10 +877,10 @@ using them altogether - like injecting noise in the images posted on Instagram.
 
 These strategies can however be used successfully with optional data that 
 is required by some services but do not impact on the service provided. 
-Randomly changing your date of birth or hometown, or even your name in Facebook 
+Randomly changing your date of birth or hometown, or even your name on Facebook 
 or Twitter will still allow you to use the service to connect with friends or 
 post updates respectively. Changing (injecting noise into) the date of birth 
-can be used only as the real date of birth approaches, to avoid the 
+can be used as the real date of birth approaches, to avoid the 
 congratulatory messages, and reverted back once the date has passed. A 
 different type of changing granularity is witholding the year from the 
 date of birth, thus allowing the actual date be know, without revealing the 
@@ -903,17 +898,16 @@ information like address, credit card, email address, phone number, mother
 maiden's name, username and password, employment information, weight and height 
 and blood type, and even a favourite colour. Using the persona systematically 
 and consistently enables a complete separation between the real person and their 
-presence online. It is difficult, of not impossible to use these personas when 
-dealing with official (regulated) services as mentioned above.
+presence online. It is difficult, of not impossible to use these personae when 
+dealing with official (regulated) services, as mentioned above.
 % example of thsi is the way Peter uses google services under a diff 
 % name Ambrose P.
 
-Several personas can be created and used to simulate collaborative obfuscation 
+Several personae can be created and used to simulate collaborative obfuscation 
 strategies, where the fake characters mimick the existence of supporting 
-evidence for the lie. The 
-practice, known as \emph{astroturfing}, is used to mask the origin of online 
+evidence for the lie. The practice known as \emph{astroturfing}, is used to mask the origin of online 
 posts supporting (or contesting) a topic, organization or political message, 
-and make them look like a grassroots movement.
+and make them look like a grassroots movement. It can however be used for the obfuscation of individuals' data, by corroborating claims.
 
 % \todo{add more about collaborative strategies? there is already a lot in the 
 % prev section}
@@ -932,13 +926,13 @@ which users now expect. If these bridges simply share the data, even in a
 controlled manner, nothing has been gained; hence the bridges become conduits
 for manipulating truth and constructing falsehoods. As personal data stores
 accumulate more real-time contextual data about the individual, as well as about
-the individual’s social connections, PDSes can provide support for the often
+the individual's social connections, PDSes can provide support for the often
 stressful and mentally burdensome task of lie maintenance, for example: i)
 identifying when a person's real activities or whereabouts contradict a lie, and
 might be discovered; ii) identifying indirect social channels that could expose
 a lie (e.g. through friends of friends); iii) suggesting appropriate lies to use
 which are least likely to be detected; iv) suggesting individuals to lie to to
-support lie maintenance (e.g. friends of the person being lied to)
+support lie maintenance (e.g. friends of the person being lied to).
 
 
 \subsection{Verification and provenance mechanisms}
@@ -1022,14 +1016,13 @@ can be used to verify that that piece of data was provided at a certain time.
 For example, if someone wants to make a prediction
 for the outcome of a football match, they could notarize that before the match,
 and then subsequently prove that they had made the prediction beforehand. It is
-generally not possible to prove that they only made a single prediction,
-however, so this technique is most suitable when the range of possible things to notarize
+generally not possible to prove that they only made a single prediction, so this technique is most suitable when the range of possible things to notarize
 is so large as to make notarizing the entire space infeasible.
 
 With regard to personal data, we can notarize our true data stream as we produce
 it. This means that we can prove that we had considered those points at the
 time, and if we say we were in a particular place, there is a high chance we
-were---however, it does not work in the complementary situtation as producing a
+were---however, it does not work in the complementary situation as producing a
 notarized point does not prove that we were not anywhere else.
 
 
@@ -1045,7 +1038,7 @@ together, to build up confidence in the notarized results (Figure
 \subsection{Effects and ethics of obfuscation}
 % \todo{How do services react when we stuff them full of noise?}
 % \todo{Is it OK to do this stuff?}
-Brunton and Nissenbaum discuss at length the ethics of obfuscation in \cite{brunton2011vernacular}, and address issues like wastefulness, dishonesty, free-riding, pollution, and possible system damage. The discussion balances the ethical questions that may arrise form obfuscation against the ethics of monitoring, aggregation, and mining of personal data for profiling.
+Brunton and Nissenbaum discuss at length the ethics of obfuscation in \cite{brunton2011vernacular}, and address issues like wastefulness, dishonesty, free-riding, pollution, and possible system damage. The discussion balances the ethical questions that may arrise from obfuscation against the ethics of monitoring, aggregation, and mining of personal data for profiling.
 
 Regardless of the perceived ethics of obfuscation, the effects it has on the way we use services and present ourselves online are real. Obfuscation evolves in lockstep with systems to see through it; future people will be better at spotting constructed points. In the short term services will start to become more suspicious about the data that goes into them and possibly start rejecting points which they perceive as incoherent. 
 
@@ -1069,8 +1062,7 @@ potential steps which can be taken by individuals at a grass-roots level.
 These techniques are not the final word in personal data sharing, but sketch out
 a particular position in the journey towards a balanced societal attitude
 towards surveillance.
-In
-time we hope that stronger legal and social protections of personal data will be
+In time we hope that stronger legal and social protections of personal data will be
 introduced, so that society can enjoy the benefits of data sharing while being
 respectful of individual's right to
 privacy\cite{rooney2012OpenData,rauhofer2012FutureProofing}. 
