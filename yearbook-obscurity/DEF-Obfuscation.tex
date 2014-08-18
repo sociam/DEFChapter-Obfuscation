@@ -279,17 +279,19 @@ Edgar Hoover with modern tools in his hands?''~\cite{templetonWatched}. Sharing
 data today cedes control to the entities of tomorrow, with their greatly
 enhanced capabilities.
 
-\item[De-identification doesn't work:] data is often shared subject to the
-condition that it will only be shared in an \emph{anonymised} or
-\emph{de-identified} form. As a highly public example, Netflix challenged the
-public to create a better recommendation engine, based on a corpus of anonymised
-viewing histories. Subsequently, it was shown that many records within the
-database could be identified by comparison with publicly available
-sources~\cite{narayanan2008Deanon}, let alone access to other, non-public data.
+\item[De-identification is not a magic bullet:] data is often shared subject to
+the condition that it will only be shared in an \emph{anonymised} or
+\emph{de-identified} form. Whilst sharing de-identified data aids in privacy
+preservation, it can also create a false sense of security, since
+\emph{re-identification} can take place. This might be purely through a set of
+data released, or through the fusion of multiple data sources to provide higher
+discriminatory power. As a highly public example, Netflix challenged the public
+to create a better recommendation engine, based on a corpus of anonymised viewing histories. Subsequently, it was shown that many records within the database could be identified by comparison with publicly available sources~\cite{narayanan2008Deanon}, let alone access to other, non-public data.
 Narayanan and Felten's recent report~\cite{narayanan2014Deidentification} explains in a non-technical manner why
 de-identification of data remains problematic. This is also highly dependant on
-the data in question; location data is extremely difficult to anonymise, with
-four data points being enough for re-identification in many cases~\cite{montjoye2013Unique}.
+the data in question: for example, location data is extremely difficult to
+anonymise, with four data points being enough for 
+re-identification in many cases~\cite{montjoye2013Unique}.
 
 \item[Databases can be joined:] as more databases of personal information
 become available, whether publicly or privately, the possibility to match, join,
