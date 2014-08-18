@@ -1057,17 +1057,96 @@ together, to build up confidence in the notarized results (Figure
 % \todo{Is it OK to do this stuff?}
 Brunton and Nissenbaum discuss at length the ethics of obfuscation in
 \cite{brunton2011vernacular}, and address issues like wastefulness, dishonesty,
-free-riding, pollution, and possible system damage. The discussion balances the
-ethical questions that may arise from obfuscation against the ethics of
-monitoring, aggregation, and mining of personal data for profiling.   
+free-riding, pollution, and possible system damage. One answer is ``that
+obfuscation has no ethical or political valence of its own, only to the ends
+that it serves'' [ibid.]. However, with the sharing of personal data, there are
+multiple overlapping contexts in which the obfuscation takes place, which should
+be dissected.
 
-Regardless of the perceived ethics of obfuscation, the effects it has on the way
-we use services and present ourselves online are real. Obfuscation evolves in
-lockstep with systems to see through it; future people will be better at
-spotting constructed points. In the short term services will start to become
-more suspicious about the data that goes into them and possibly start rejecting
-points which they perceive as incoherent.    
+On a \emph{personal} level, obfuscation changes the picture of us that a service
+has. For different services, different levels and types of distortion may be
+bearable or desirable: while adding noise to a location signal may still allow
+sensible location based recommendations, pretending to like random products
+might make a recommender service unusable. 
+ One of the reasons so many obfuscation strategies were presented is
+that each strategy preserves different qualities, and the choice of what and how
+to obfuscate must be made in context, as there is an unavoidable tradeoff
+between privacy preservation and maintaining the level of personalisation that
+makes a service worthwhile.
 
+On a \emph{social} level, being caught in a lie can be unpleasant; as
+Bok says:
+\begin{quote}
+``In practice, however, lying to enemies has enormous drawbacks...  lies to
+enemies carry very special dangers of backfiring. All too often, the lie
+directed at adversaries is a lie to friends as well; and when it is discovered,
+as some always are, the costs are high.'' \cite[p. 141]{bok1978lying} 
+\end{quote}
+While the reputational damage from lying can be large, some steps can be taken
+to mitigate this. Obfuscation techniques can be chosen which are
+clearly non-true to human observers, or to one's trusted circle of friends,
+echoing boyd's \emph{social steganography}\cite{boyd2012Networked}. The
+alterations will then have the desired effect of confounding automated
+surveillance, without giving one's friends the sense of being deceived.
+
+Additionally, systematic data manipulation can result in presenting an online
+persona which diverges from one's own. Recently, Mat Honan tried the experiment
+of ``liking'' everything on Facebook \cite{honan2014Facebook}. After two days of
+adding this \emph{chaff} to his activities, his public persona demonstrated
+radical far-right and far-left viewpoints, to the extent that his friends became
+concerned.
+
+As well as presenting an untrue picture of oneself, systematically adding noise
+pushes a cognitive burden onto one's associates. Mat's friends suddenly found
+themselves bombarded by the stream of chaff that he was spewing out, to the
+point where his junk data edged out all of their normal social interaction.
+
+On a \emph{societal} level, while obfuscation overlaps both `pro-social' lying
+and `butler lies', it must also be recognised that systematic mistruths can weaken the social fabric,
+disrupting trust with friends and coleagues, as well as those
+carrying out surveillance. This adds friction to online interaction, as one must
+put the effort into constantly questioning what data is true and false.
+On a broader scale, the social good which comes of having access to increasingly
+detailed personal data can be compromised if significant proportions of the data
+are untrue. 
+
+
+In terms of \emph{accountability}, there is the danger of being unable to
+support your real behaviour: even using a scheme where the real data is
+submitted and notarized, any defense which relies on a stream of information
+which has been systematically manipulated is likely to be problematic. As online
+systems are increasingly being used to account for who you are and what you do,
+making your online persona questionable could have far reaching consequences. A
+complementary risk is that the constructed data might be accidentally
+incriminating: a spuriously generated location point might place a user at a
+crime scene, or a participant in an account sharing program could use a
+borrowed account while engaging in criminal activity.
+There is also a danger that the same tools that preserve personal
+privacy are applicable to covering up illegal or anti-social behaviour (e.g.
+cyber-bullying). 
+
+Finally, at a \emph{systems} level, the context is dynamic, and services will
+respond to obfuscatory practices. 
+Services may
+shut down or transition to a payment based model in response to the declining
+value of increasingly noisy data.
+Future services will be better at spotting 
+obfuscated data, and may take steps to prevent it, analysing the coherence and
+plausibility of incoming data. Obfuscation systems will have to evolve along
+with the context in which they are used, creating an arms race between
+obfuscators and service providers.
+
+These issues suggest firstly that obfuscation is a form of \emph{free
+riding}\cite{brunton2011vernacular}: if everyone did it the system would grind
+to a halt, but if a few people do it, they can take advantage of everyone else's
+truthfulness to preserve their own privacy. However, if the majority of the
+population engaged in obfuscation, this would be a clear signal that the balance
+of privacy was unacceptable to the general population, becoming a voice of
+protest.
+
+Secondly, it is clear that more understanding is needed around what kinds of
+obfuscation to apply when, and how to create tools to enable these practices in
+the context of connected, visible, online social behaviour.
 % \begin{itemize}
 %   \item Viability - how do services react when we fill them full of noise?
 %   Plausible versions of these techniques
