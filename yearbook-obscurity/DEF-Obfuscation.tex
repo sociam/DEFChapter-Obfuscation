@@ -85,25 +85,13 @@ Obfuscation; Data politics; Personal Data Stores; Social Machines; Pants-on-fire
 
 %% maxxie wrote some stuff here
 
-The use and development of tools for protecting people's privacy online used to
-be framed as supporting the activities of criminals, miscreants and even terrorists.  
-However, as increasingly sophisticated methods for tracking and modelling individuals
-have become pervasively deployed in order to extract economic value from them, 
-the old ``I have nothing to hide; therefore I should not care'' argument has fallen apart. 
-Previously theoretical arguments of what \emph{might} happen if one is pervasively tracked have been replaced by the tangible reality of hundreds, or thousands of separate information brokers 
-(some visible, others invisible), grappling with one another to build the most 
-complete picture of each and every individual's life, so that such models 
-can be used to precisely target, and behaviourally manipulate individuals,
-often in ways too subtle to be perceived (e.g. \cite{Kramer17062014}). 
+In 1890, Warren and Brandeis called for consideration of new laws to better secure the ``the right to be let alone'', as ``the private lives, habits, acts and relations of individuals'' were perceived to be under threat by the emerging technologies of their time - including ``instant'' photography, and early electro-mechanical recording devices~\cite{warren1890right}.  Over a century and a quarter later, technology still continues to threaten individuals' right to be left alone, now at unprecedented scale and fidelity. In terms of technological sophistication, the massive computational capacity hosted in various data warehouses are being used to track individual's daily activities, communications and locations.  Such profiling comprises a race to build the most complete picture(s) of each person's life, so as to be able to apply this in-depth knowledge  to precisely target at them, advertising and other behavioural manipulations -- often in ways too subtle to be perceived (e.g. \cite{Kramer17062014}). 
 
-The sophisticated methods being used to track and pinpoint details of individuals 
-has not been met with a corresponding increase in public education to spread awareness
-of how people are being tracked, nor with a proliferation of counter-tracking and 
-counter-surveillance tools that can be readily used by end-user citizens to defend 
-themselves.  As a result, a great asymmetric divide has grown between 
-those brokers that track and citizens who are being monitored and manipulated, 
-and whose individual autonomy is being threatened.  
+%%  only been met by small steps protecting them from such unwanted tracking and surveillance.  This tracking has, for the large part, become so pervasive that, despite the best efforts of various parties to try to keep such tracking mechanisms covert, it has nontheless risen to be a primary issue in the public eye, meaning that the old ``I have nothing to hide; therefore I should not care'' argument has swiftly been dissolvd.  Previously theoretical arguments of what \emph{might} happen if one is pervasively tracked have been replaced by the tangible reality of the hundreds, 
 
+Such behavioural manipulation driven by omnipresent observation brings to mind Bentham's thought experiment of the Panopticon, developed by Foucault, describing a prison in which inmates' lives are constantly surveilled as a means of discipline and exertion of control.  In the world of technologically-driven data collection which we inhabit, this has effects both on people's behaviour as they internalise the fact that they are surveilled, and on the way in which they are treated, and socially sorted by the gears of our algorithmic society~\cite{simon2005Panopticism}.
+
+Meanwhile, the rise of tracking has not been met with a corresponding increase in either public awareness of how and when they are being tracked, nor practical ways with which individuals can protect themselves from unwanted profiling and targeting.  As a result, a great asymmetry has arisen between the information brokers with vast resources that track, and those end-user citizens being tracked with little or no choice.  As if this asymmetry was not problematic enough, the few privacy-enhancing tools that have proven effective against surveillance have been often portrayed by mainstream news and media outlets as ``tools for terrorst and paedophiles'' further discouraging their use and adoption in the mainstream (e.g. \cite{bbctor,fbicommunities}).
 % 
 % Such asymmetry means that privacy protection can no longer be merely a concern 
 % for a minority with peculiar sensitivities towards being seen or
@@ -139,21 +127,9 @@ and whose individual autonomy is being threatened.
 % \cite{facebookstudy}).           
 
 
-Bentham's thought experiment of the Panopticon, developed by Foucault, describes
-a prison in which inmates lives are constantly surveilled as a means of
-discipline and exertion of control.  In the world of technologically driven 
-data collection which we inhabit, this has effects both on people's behaviour as
-they internalise the fact that they are surveilled, and on the way in which they
-are treated, and \emph{socially sorted} by the gears of our algorithmic
-society\cite{simon2005Panopticism}.
-
 In this chapter, we are interested in practices which can cloud the lenses of the observers, to
 choose how we are seen, and to help regain some control of
-the manner in which our lives are surveilled, both socially and otherwise.
-
-% Bruce Schneier: ``privacy is not about something to hide its about autonomy and control; when you are observed you cannot be in control''
-
-We discuss and analyse methods of privacy protection that
+the manner in which our lives are surveilled, both socially and otherwise. We discuss and analyse methods of privacy protection that
 advance beyond the current state of anonymisation tools that merely obscure the tracks
 of individuals, towards those that employ methods borrowed from
 information warfare~\cite{gursestranslating,lyon2007surveillance}, in order to allow individuals to regain autonomy
@@ -169,11 +145,11 @@ speculative, future possibilities.
 \subsection{The rise of personal data and services reliant on it, and relation
 to surveillance}
 
-As we pass through the digitally augmented world that we collectively inhabit,
+As we pass through the digitally-augmented world that we collectively inhabit,
 the set of actions with the potential to produce data grows year on year.
 Portions of this outpouring are kept and stored as
 \emph{capta}, from \emph{capere}: to keep~\cite{dodge2005codes}. From
-using an access card to unlock a door at the workplace, right down to tracking
+using an access card to unlock a door, right down to tracking
 individual footfalls, pervasive digital systems illuminate and annotate our
 physical activity. Accreting around this body of physical observation is an
 expanding sphere of mental observation and analysis. This can take the form of
@@ -231,10 +207,13 @@ active, since surveillance in this context offers opportunities to take action, 
 information and communicate.''~\cite{albrechtslund2008online}
 \end{quote} 
 
+There have been calls to privacy enhancing tools which minimise the amount of data that is collected to only the necessary. Data minimisation combined with user control over the data, and preservation of the context where the personal data was disclosed originally make up the \emph{Privacy 3.0} view of Borcea-Pfitzmann et al~\cite{Borcea2011privacy}. 
+As the technology side evolves and improves, there is more acute need that the legislative side must catch up and provide the framework for the recognition of personal information ownership rights~\cite{Schwartz2004property}. Attempting to solve the discrepancy in goals between the actors involved in the personal information markets, the organization providing services on one side, and the privacy concerned users on the other, Spiekermann and Novotny developed a tiered model for privacy-aware information markets, which they evolved based on feedback from experts~\cite{Spiekermann2014}. The final model consists of four spaces of the personal information markets, with rules and responsabilities for each, and recommendations from the authors on what technical and legislative infrastructure is needed for their realisation: the customer relationship space, the organisation controlled space, the customer controlled space, and the safe harbor for big data space. Some of the most important issues and solutions they present include the separation of the service exchange from the information exchange, the mandatory privacy-friendly service option that providers must offer, and the lawful accountability of organisations for the personal information that they collect, including any subcontractors they might pass the information to. 
+
 In summary, there are multitudinous situations where we are coerced, cajoled or
 manipulated into sharing our personal data, and the cost of avoiding such
 sharing is increasingly becoming untenable for large sections of the population
-of the connected world.
+of the connected world. However, there are steps being taken in the direction of a privacy-aware market for personal information, which protects the ownership rights of users over their personal data, and their right to privacy, while also allowing for the market to innovate and grow based on legally obtained and used, and of higher quality personal information.
 
 \subsection{Sharing is a loss of control}
 
@@ -308,7 +287,7 @@ society with the result that information from discrete contexts, e.g.,
 \end{description}
 
 %  \todo{What you are sort of getting at as ``rights'' to data and the lack of
-% regulation thereof; there is no notion of data ownership in any legisltative
+% regulation thereof; there is no notion of data ownership in any legislative
 % form, nor is there a notion of course of maintenance and tansfer of such terms
 % of ownership - except in the most select of contextx, people have no legal
 % ``right to even their own data''}
@@ -461,7 +440,7 @@ Perhaps the most sophisticated current tool developed for obscuring network acti
 
 Even with such tools, ISPs, mobile broadband providers and other ``last mile'' internet access providers can collect a significant quantity of low-level data pertaining to the physical place and times that a person accesses sites, the quantity of data exchanged, and the potential destinations.  To thwart this level of tracking, several hardware vendors and operating systems are starting to incorporate the ability to perform identifier randomisation (such as MAC-address and Bluetooth hardware address randomisation\footnote{Such features are expected to be introduced as a standard feature to the consumer market for the first time by Apple in iOS 8 - \url{http://appleinsider.com/articles/14/06/09/mac-address-randomization-joins-apples-heap-of-ios-8-privacy-improvements}}.  Such features are standard for an emerging group of speciality \emph{security hardened} devices, including security-enhanced mobile phones and tablets (such as the Black Phone\footnote{Black Phone - \url{https://www.blackphone.ch}}). 
 
-While these tools are dedicated to obfuscating action and identity for actions in the digital realm, automatic tracking of people and their activities in the physical world has also increased, thanks to improvements in facial recognition, the introduction of digital tokens and keys for granting people access to physical spaces, membership cards ("loyalty programmes"), credit cards, and so forth.  A number of projects and approaches have similarly been introduced to reduce trackability in this space.  In terms of protection against facial recognition algorithms, for example, Harvey et al introduced a special make-up technique based on reverse-engineering the most popular face detection algorithms, called CV Dazzle~\cite{harvey2012cv}. To reduce infrared camera based person tracking Harvey also introduced heat-signature cloaking burqas and hoodies in a line of clothing called \emph{Stealth Wear}\footnote{Stealth Wear - \url{ahprojects.com/projects/stealth-wear}}.
+While these tools are dedicated to obfuscating action and identity for actions in the digital realm, automatic tracking of people and their activities in the physical world has also increased, thanks to improvements in facial recognition, the introduction of digital tokens and keys for granting people access to physical spaces, membership cards (``loyalty programmes''), credit cards, and so forth.  A number of projects and approaches have similarly been introduced to reduce trackability in this space.  In terms of protection against facial recognition algorithms, for example, Harvey et al introduced a special make-up technique based on reverse-engineering the most popular face detection algorithms, called CV Dazzle~\cite{harvey2012cv}. To reduce infrared camera based person tracking Harvey also introduced heat-signature cloaking burqas and hoodies in a line of clothing called \emph{Stealth Wear}\footnote{Stealth Wear - \url{ahprojects.com/projects/stealth-wear}}.
 
 To reduce city-wide tracking using transport cards such as the London Oyster card, NYC MetroCard, as well as  purchase tracking via loyalty card schemes, a common practice that has arisen in several of these cities has been to host social meetups where people regularly gather and swap their valueless cards.  This allows them to blur data mining algorithms by eliminating the assumption that a single card will be owned and used by a single person, but instead by a constantly evolving group \cite{lockton}.
 
@@ -884,7 +863,7 @@ The goal of chaff is not to be believable on deeper inspection, or even
 consistent, so the algorithms for choosing what to post and where to browse 
 need not be too complex. 
 
-Similar to using prepaid disposable [burner] phones to avoid surveillance, 
+Similar to using prepaid disposable (``burner'') phones to avoid surveillance, 
 ghost email can be used to obfuscate online activity, as it prevents the email 
 address from being used as a global identifier for the person. For websites which 
 require registration, we can use disposable email addresses, which would 
@@ -1111,9 +1090,10 @@ radical far-right and far-left viewpoints, to the extent that his friends became
 concerned.
 
 As well as presenting an untrue picture of oneself, systematically adding noise
-pushes a cognitive burden onto one's associates. Mat's friends suddenly found
-themselves bombarded by the stream of chaff that he was spewing out, to the
-point where his junk data edged out all of their normal social interaction.
+may also have unplanned side effects that might directly impact one's friends and connections. 
+For example, Mat's friends suddenly found themselves flooded by the stream of liked articles he was 
+generating, to the point where his junk data stream overwhelmed others' friends' legitimate statuses
+and impeded their ability to use the social network normally. 
 
 On a \emph{societal} level, while obfuscation overlaps both `pro-social' lying
 and `butler lies', it must also be recognised that systematic mistruths can weaken the social fabric,
@@ -1141,8 +1121,7 @@ cyber-bullying).
 
 Finally, at a \emph{systems} level, the context is dynamic, and services will
 respond to obfuscatory practices. 
-Services may
-shut down or transition to a payment based model in response to the declining
+Services may shut down or transition to a payment based model in response to the declining
 value of increasingly noisy data.
 Future services will be better at spotting 
 obfuscated data, and may take steps to prevent it, analysing the coherence and
@@ -1161,6 +1140,9 @@ protest.
 Secondly, it is clear that more understanding is needed around what kinds of
 obfuscation to apply when, and how to create tools to enable these practices in
 the context of connected, visible, online social behaviour.
+
+However, there is another opposite view; that anonymity is natural and healthy both on and off-line, and that methods that force full identifiability at each interaction are both difficult, fragile and unhealthy for long term growth.  Proponents of this view (e.g. \
+cite{boyd2012Networked,pseudointernet,wang2013talking,turkle2011life}) argue that obfuscation approaches are not just ethical, but necessary, for individuals to maintain the autonomy and freedom from being entrapped into a single identity tied to their presence in the physical world.  In particular, it has been argued (e.g., \cite{wang2013talking}) that, the freedom to have multiple, flexible identities, including borrowed identities \cite{dalton2013Pseudonymity}, group identities, and role-based identities, foster the kinds of identity experimentation that leads people to learn how to cultivate healthy social relationships throughout their lives.  This principle, known as the ``elastic self'', has been responsible for key growth in online communities to date, and is what is being threatened by the surveillance and real-name policies mentioned previously.
 
 \todo{Need some positives!}
 \todo{Elastic self - need space to experiment}
