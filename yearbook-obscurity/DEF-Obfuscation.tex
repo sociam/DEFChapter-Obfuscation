@@ -64,9 +64,13 @@ individuals, through increased understanding of behaviour, communication and
 support for emerging forms of socialisation and connectedness. However, there
 are risks associated with disclosing personal information, and present systems
 show a systematic asymmetry between the subjects of the data and those who
-control and manage the way that data is propagated and used. In this chapter, we
-explore a set of obfuscation techniques for ameliorating the tension between
-the benefits of sharing, and a distrust of those with whom we share our data.
+control and manage the way that data is propagated and used. This leads to a
+tension between a desire to engage with online society and enjoy its benefits on
+one hand, and a distrust of those with whom the data is shared on the other.
+In this chapter, we
+explore a set of obfuscation techniques which may help to redress the balance of
+power when sharing personal data, and return agency and choice to users of
+online services.
 \end{abstract}
 
 \begin{keyword}
@@ -602,7 +606,14 @@ overlay the points which would be submitted on their behalf after obfuscation.
 
 \subsection{Strategies for the lone obfuscator}
 
-\fig[1.05]{SinglePlayerObfuscation}{Obfuscation strategies for the lone agent}
+\fig[0.91]{SinglePlayerObfuscation}{Obfuscation strategies for the lone agent.
+Location has been reduced to a single dimension so it can be plotted against time.
+Real data is shown in purple with circular points. Constructed or manipulated
+points have different shapes. Schemes which requite a simulation of human
+behaviour are marked with a head icon
+(\includegraphics[height=7 pt]{figures/Head}), and where an alternative
+model of the world is created, it is shown as a dotted line. 
+}
 
 Figure \ref{fig:SinglePlayerObfuscation} lists a collection of possible
 obfuscation strategies. In all cases, a fictitious one-dimensional ``location"
@@ -728,8 +739,11 @@ location data can be entered along with the generated points, the deception is
 obvious, and location based services may become upset at the multiple paths.
 
 \subsection{Collaborative Obfuscation}
-\fig{MultiPlayerObfuscation}{Multiplayer obfuscaction strategies: i) artificial
-co-location; ii) supporting information; iii) account sharing}
+\fig[1.0]{MultiPlayerObfuscation}{Three possible multi-person obfuscaction
+strategies. As before, modelled behaviour is shown as dotted lines. In the \emph{Artificial
+co-location} strategy, circles represent real datapoints, diamonds are the ones that the
+obfuscating user submits. In the \emph{Account sharing} strategy, the shape of
+points represents the account through which they are submitted. }
 
 Including others in the obfuscation challenge opens up a range of new 
 strategies, where collusion can aid in the creation of otherwise unachievable
